@@ -1725,7 +1725,11 @@ body {
     z-index: 1;
     position: relative;
     align-items: flex-start; /* Left-align card content */
-    padding: 2.68px 2.68px 2.68px 4.02px; /* Extra left padding for better alignment */
+    justify-content: flex-start; /* Align content to top-left */
+    padding: 5.36px 2.68px 2.68px 5.36px; /* Enhanced top and left padding for better positioning */
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient background */
+    border: 1.34px solid #e2e8f0; /* Softer border color */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
 }
 
 .table-melds .card:first-child {
@@ -1735,16 +1739,21 @@ body {
 .table-melds .card:hover {
     z-index: 5;
     box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced hover shadow */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+    border-color: #cbd5e1; /* Slightly darker border on hover */
 }
 
-/* Left-align both rank and suit in table meld cards */
+/* Position rank and suit vertically in table meld cards - suit directly below rank */
 .table-melds .card .rank {
     align-self: flex-start; /* Ensure rank stays left-aligned */
+    margin-bottom: 2px; /* Small margin to create space for suit below */
 }
 
 .table-melds .card .suit {
     align-self: flex-start; /* Align suit to left as well */
     transform: none; /* Remove rotation to keep suit upright */
+    opacity: 0.9; /* Subtle opacity for visual hierarchy */
+    margin-top: -2px; /* Pull suit closer to rank */
 }
 
 /* === DISCARD PILE OVERLAPPING CARD STYLES === */
@@ -2298,4 +2307,4 @@ body {
     color: var(--text-primary);
 }
 
-/*# sourceMappingURL=main.42465b44ff59137b51e9.css.map*/
+/*# sourceMappingURL=main.0ef94dbc050cd39e8864.css.map*/
