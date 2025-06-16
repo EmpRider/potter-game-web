@@ -1403,7 +1403,7 @@ body {
     flex: 1;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr 1fr; /* Two equal columns */
     gap: var(--spacing-md);
     align-content: start; /* Align grid content to top */
 }
@@ -3004,4 +3004,4 @@ body {
     color: var(--text-primary);
 }
 
-/*# sourceMappingURL=main.9497b6f6b64d2d729b7b.css.map*/
+/*# sourceMappingURL=main.f8dd55d41b38d8e570b1.css.map*/
