@@ -2,24 +2,24 @@
 
 /* === ROOT VARIABLES (Scaled) === */
 :root {
-    /* Colors */
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --warning-gradient: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%);
-    --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    /* Eye-friendly Color Palette */
+    --primary-gradient: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
+    --secondary-gradient: linear-gradient(135deg, #d4a5a5 0%, #c8a2c8 100%);
+    --success-gradient: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
+    --warning-gradient: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
+    --danger-gradient: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
 
-    --bg-primary: rgba(0, 0, 0, 0.8);
-    --bg-secondary: rgba(255, 255, 255, 0.1);
-    --bg-tertiary: rgba(255, 255, 255, 0.05);
-    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-primary: rgba(35, 40, 50, 0.92);
+    --bg-secondary: rgba(60, 68, 85, 0.4);
+    --bg-tertiary: rgba(100, 125, 150, 0.2);
+    --bg-card: rgba(248, 249, 250, 0.98);
 
-    --text-primary: #ffffff;
-    --text-secondary: #e2e8f0;
-    --text-muted: #94a3b8;
-    --text-accent: #3b82f6;
+    --text-primary: #eceff4;
+    --text-secondary: #d8dee9;
+    --text-muted: #a3a9b8;
+    --text-accent: #7fb069;
 
-    --border-color: rgba(255, 255, 255, 0.2);
+    --border-color: rgba(129, 161, 193, 0.25);
 
     /* Scaled Dimensions */
     --border-radius: 8.04px; /* 12px * 0.67 */
@@ -39,10 +39,10 @@
     --spacing-lg: 0.804rem; /* 1.2rem * 0.67 */
     --spacing-xl: 1.206rem; /* 1.8rem * 0.67 */
 
-    /* Scaled Layout Variables */
-    --col-width-left: 234.5px; /* 350px * 0.67 */
+    /* Scaled Layout Variables - Reduced side panel widths */
+    --col-width-left: 180px; /* Reduced from 234.5px for more compact opponents section */
     --col-width-middle: 167px; /* 250px * 0.67 - width for card piles */
-    --col-width-right: 234.5px; /* 350px * 0.67 */
+    --col-width-right: 180px; /* Reduced from 234.5px for more compact scoreboard section */
 
     /* Transition Variables */
     --transition-fast: all 0.15s ease;
@@ -58,7 +58,7 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--primary-gradient);
+    background: linear-gradient(135deg, #3c4454 0%, #4a6b8a 50%, #6b8ba3 100%);
     color: var(--text-primary);
     overflow: hidden;
     height: 100vh;
@@ -71,7 +71,7 @@ body {
 
 /* === UTILITY CLASSES === */
 .text-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -95,9 +95,9 @@ body {
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 
-.text-gray-300 { color: #d1d5db; }
-.text-gray-400 { color: #9ca3af; }
-.text-gray-500 { color: #6b7280; }
+.text-gray-300 { color: #d8dee9; }
+.text-gray-400 { color: #a3a9b8; }
+.text-gray-500 { color: #81a1c1; }
 
 /* === NOTIFICATION SYSTEM === */
 .notification {
@@ -123,26 +123,26 @@ body {
 }
 
 .notification.success {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
 }
 
 .notification.error {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
 }
 
 .notification.warning {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
 }
 
 .notification.info {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
 }
 
 /* === MODAL STYLES === */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(35, 40, 50, 0.9);
     backdrop-filter: blur(5.36px); /* 8px * 0.67 */
     display: none;
     align-items: center;
@@ -204,8 +204,8 @@ body {
 
 .setup-input:focus {
     outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 2.01px rgba(59, 130, 246, 0.1); /* 3px * 0.67 */
+    border-color: #7fb069;
+    box-shadow: 0 0 0 2.01px rgba(127, 176, 105, 0.2); /* 3px * 0.67 */
 }
 
 .start-game-btn {
@@ -248,7 +248,7 @@ body {
 .setup-title {
     font-size: 1.75rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 50%, #d4a5a5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -265,23 +265,23 @@ body {
     position: absolute;
     top: -0.5rem;
     right: -0.5rem;
-    background: rgba(239, 68, 68, 0.1);
-    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: rgba(212, 165, 165, 0.15);
+    border: 1px solid rgba(212, 165, 165, 0.4);
     border-radius: 50%;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ef4444;
+    color: #d4a5a5;
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 14px;
 }
 
 .setup-close-btn:hover {
-    background: rgba(239, 68, 68, 0.2);
-    border-color: rgba(239, 68, 68, 0.5);
+    background: rgba(212, 165, 165, 0.25);
+    border-color: rgba(212, 165, 165, 0.6);
     transform: scale(1.1);
 }
 
@@ -363,8 +363,8 @@ body {
 
 .setup-input-optimized:focus {
     outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: #7fb069;
+    box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.2);
     background: var(--bg-primary);
 }
 
@@ -393,14 +393,14 @@ body {
 }
 
 .setup-stepper:hover {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: #3b82f6;
-    color: #3b82f6;
+    background: rgba(127, 176, 105, 0.15);
+    border-color: #7fb069;
+    color: #7fb069;
 }
 
 .setup-info {
-    background: rgba(59, 130, 246, 0.05);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(127, 176, 105, 0.08);
+    border: 1px solid rgba(127, 176, 105, 0.25);
     border-radius: 8px;
     padding: 1rem;
     display: flex;
@@ -424,7 +424,7 @@ body {
 .setup-info-value {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #3b82f6;
+    color: #7fb069;
 }
 
 .setup-actions {
@@ -450,25 +450,25 @@ body {
 }
 
 .setup-btn-primary {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
     color: white;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 12px rgba(127, 176, 105, 0.3);
 }
 
 .setup-btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
 }
 
 .setup-btn-secondary {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
     color: white;
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 177, 122, 0.3);
 }
 
 .setup-btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 6px 20px rgba(230, 177, 122, 0.4);
 }
 
 /* === MELD SELECTION MODALS === */
@@ -516,16 +516,16 @@ body {
 }
 
 .meld-option:hover {
-    border-color: #3b82f6;
-    background: rgba(59, 130, 246, 0.1);
+    border-color: #8b9dc3;
+    background: rgba(139, 157, 195, 0.15);
     transform: translateY(-1.34px); /* -2px * 0.67 */
     box-shadow: var(--shadow-md);
 }
 
 .meld-option.selected {
-    border-color: #10b981;
-    background: rgba(16, 185, 129, 0.2);
-    box-shadow: 0 0 13.4px rgba(16, 185, 129, 0.3); /* 20px * 0.67 */
+    border-color: #7fb069;
+    background: rgba(127, 176, 105, 0.2);
+    box-shadow: 0 0 13.4px rgba(127, 176, 105, 0.3); /* 20px * 0.67 */
 }
 
 .meld-option-header {
@@ -538,7 +538,7 @@ body {
 .meld-type {
     font-weight: 700;
     font-size: 0.737rem; /* 1.1rem * 0.67 */
-    color: var(--text-accent);
+    color: #8b9dc3;
 }
 
 .meld-description {
@@ -573,16 +573,16 @@ body {
 }
 
 .meld-card-preview.red {
-    color: #dc2626;
+    color: #bf616a;
 }
 
 .meld-card-preview.black {
-    color: #1f2937;
+    color: #3b4252;
 }
 
 .meld-card-preview.potter {
-    border-color: #facc15;
-    box-shadow: 0 0 10.05px rgba(251, 191, 36, 0.6); /* 15px * 0.67 */
+    border-color: #ebcb8b;
+    box-shadow: 0 0 10.05px rgba(235, 203, 139, 0.6); /* 15px * 0.67 */
 }
 
 .meld-card-preview .rank {
@@ -690,19 +690,19 @@ body {
 }
 
 .score-rank-item.winner {
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
-    border-color: #facc15;
-    box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.3);
+    background: linear-gradient(135deg, rgba(235, 203, 139, 0.25) 0%, rgba(230, 177, 122, 0.25) 100%);
+    border-color: #ebcb8b;
+    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.4);
 }
 
 .score-rank-item.second {
-    background: linear-gradient(135deg, rgba(156, 163, 175, 0.2) 0%, rgba(107, 114, 128, 0.2) 100%);
-    border-color: #9ca3af;
+    background: linear-gradient(135deg, rgba(129, 161, 193, 0.2) 0%, rgba(139, 157, 195, 0.2) 100%);
+    border-color: #81a1c1;
 }
 
 .score-rank-item.third {
-    background: linear-gradient(135deg, rgba(205, 127, 50, 0.2) 0%, rgba(180, 83, 9, 0.2) 100%);
-    border-color: #cd7f32;
+    background: linear-gradient(135deg, rgba(212, 165, 165, 0.2) 0%, rgba(200, 162, 162, 0.2) 100%);
+    border-color: #d4a5a5;
 }
 
 .rank-position {
@@ -725,18 +725,18 @@ body {
 }
 
 .rank-number.first {
-    background: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
-    color: #000;
+    background: linear-gradient(135deg, #ebcb8b 0%, #e6b17a 100%);
+    color: #2e3440;
 }
 
 .rank-number.second {
-    background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #81a1c1 0%, #8b9dc3 100%);
+    color: #eceff4;
 }
 
 .rank-number.third {
-    background: linear-gradient(135deg, #cd7f32 0%, #b45309 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
+    color: #eceff4;
 }
 
 .player-info-summary {
@@ -877,8 +877,8 @@ body {
 }
 
 .undo-warning-box {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
-    border: 1.34px solid #f59e0b;
+    background: linear-gradient(135deg, rgba(230, 177, 122, 0.12) 0%, rgba(212, 165, 165, 0.12) 100%);
+    border: 1.34px solid #e6b17a;
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
@@ -889,7 +889,7 @@ body {
 
 .warning-icon {
     font-size: 1.608rem; /* 2.4rem * 0.67 */
-    color: #f59e0b;
+    color: #e6b17a;
     flex-shrink: 0;
 }
 
@@ -900,7 +900,7 @@ body {
 .warning-title {
     font-weight: 700;
     font-size: 0.871rem; /* 1.3rem * 0.67 */
-    color: #f59e0b;
+    color: #e6b17a;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -949,7 +949,7 @@ body {
 }
 
 .score-value.penalty {
-    color: #ef4444;
+    color: #d4a5a5;
 }
 
 .penalty-arrow {
@@ -966,7 +966,7 @@ body {
 }
 
 .undo-confirm-btn {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
     border: none;
     border-radius: var(--border-radius);
     padding: var(--spacing-md) var(--spacing-xl);
@@ -984,7 +984,7 @@ body {
 }
 
 .undo-confirm-btn:hover {
-    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    background: linear-gradient(135deg, #c8a2a2 0%, #bf9999 100%);
     transform: translateY(-1.34px);
     box-shadow: var(--shadow-lg);
 }
@@ -1008,19 +1008,19 @@ body {
 
 .undo-cancel-btn:hover {
     background: var(--bg-tertiary);
-    border-color: #3b82f6;
+    border-color: #8b9dc3;
     transform: translateY(-1.34px);
     box-shadow: var(--shadow-md);
 }
 
 /* === LOG ENTRY STYLING === */
 .log-penalty {
-    color: #f59e0b;
+    color: #e6b17a;
     font-weight: 600;
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(230, 177, 122, 0.12);
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 2.68px; /* 4px * 0.67 */
-    border-left: 2.68px solid #f59e0b; /* 4px * 0.67 */
+    border-left: 2.68px solid #e6b17a; /* 4px * 0.67 */
     margin: var(--spacing-xs) 0;
 }
 
@@ -1029,17 +1029,17 @@ body {
 }
 
 .log-success {
-    color: #10b981;
+    color: #7fb069;
     font-weight: 500;
 }
 
 .log-error {
-    color: #ef4444;
+    color: #d4a5a5;
     font-weight: 500;
 }
 
 .log-turn {
-    color: #3b82f6;
+    color: #8b9dc3;
     font-weight: 600;
 }
 
@@ -1049,13 +1049,13 @@ body {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: var(--col-width-left) var(--col-width-middle) 1fr var(--col-width-right);
+    grid-template-columns: 1fr var(--col-width-right);
     grid-template-rows: auto 3fr 1fr;
     grid-template-areas:
-        "header header header header"
-        "opponents piles melds scoreboard"
-        "opponents hand-and-controls-area hand-and-controls-area scoreboard";
-    background: rgba(0, 0, 0, 0.3);
+        "header header"
+        "melds right-column"
+        "hand-and-piles right-column";
+    background: rgba(35, 40, 50, 0.5);
     backdrop-filter: blur(3.35px); /* 5px * 0.67 */
     padding: var(--spacing-sm);
     gap: var(--spacing-sm);
@@ -1107,8 +1107,8 @@ body {
 }
 
 .potter-badge {
-    background: linear-gradient(135deg, #facc15 20%, #f59e0b 100%);
-    color: #000;
+    background: linear-gradient(135deg, #ebcb8b 20%, #e6b17a 100%);
+    color: #2e3440;
     font-weight: 600;
 }
 
@@ -1156,7 +1156,7 @@ body {
     border-radius: var(--border-radius);
     font-size: 0.5695rem; /* 0.85rem * 0.67 */
     font-weight: 600;
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
 }
 
 .header-right {
@@ -1190,27 +1190,52 @@ body {
     background: transparent;
 }
 
-/* === LEFT COLUMN: Opponents Section (Spans mid and bottom rows) === */
-.opponents-section {
-    grid-area: opponents;
+/* === RIGHT COLUMN: Combined Right Column Section === */
+.right-column-section {
+    grid-area: right-column;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    height: 100%;
+}
+
+/* === RIGHT COLUMN TOP: Scoreboard Section === */
+.scoreboard-section {
     background: var(--bg-primary);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     border: 0.67px solid var(--border-color); /* 1px * 0.67 */
     backdrop-filter: blur(6.7px); /* 10px * 0.67 */
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
-    height: 100%;
+    gap: var(--spacing-xs);
+    flex: 0 0 auto; /* Fixed size - don't grow or shrink */
+    overflow: visible; /* Allow section title to be visible */
+    height: auto; /* Let content determine height initially */
+}
+
+/* === RIGHT COLUMN BOTTOM: Opponents Section === */
+.opponents-section {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    border: 0.67px solid var(--border-color); /* 1px * 0.67 */
+    backdrop-filter: blur(6.7px); /* 10px * 0.67 */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    flex: 1; /* Take all remaining space after fixed scoreboard */
+    min-height: 0; /* Allow proper flex shrinking */
+    overflow: hidden; /* Prevent section from overflowing */
 }
 
 .section-title {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    font-size: 0.804rem; /* 1.2rem * 0.67 */
+    gap: var(--spacing-xs); /* Reduced gap */
+    font-size: 0.737rem; /* Further reduced font size for compact layout */
     font-weight: 600;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xs); /* Further reduced margin */
     color: var(--text-secondary);
 }
 
@@ -1221,62 +1246,54 @@ body {
 .opponents-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm); /* Increased gap for better spacing with more room */
     overflow-y: auto;
     flex: 1;
+    min-height: 0; /* Allow proper flex behavior */
+    padding-right: 2px; /* Small padding for scrollbar space */
 }
 
 .player-area {
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm); /* Increased padding with more available space */
     border: 0.67px solid var(--border-color); /* 1px * 0.67 */
     transition: var(--transition-normal);
     flex-shrink: 0;
+    position: relative; /* Enable positioning for status indicators */
+    min-height: 60px; /* Increased minimum height for better appearance */
 }
 
 .player-area.active {
-    border-color: #3b82f6;
-    box-shadow: 0 0 13.4px rgba(59, 130, 246, 0.3); /* 20px * 0.67 */
-    background: rgba(59, 130, 246, 0.1);
+    border-color: #8b9dc3;
+    box-shadow: 0 0 13.4px rgba(139, 157, 195, 0.4); /* 20px * 0.67 */
+    background: rgba(139, 157, 195, 0.15);
 }
 
 .player-area.human {
-    border-color: #10b981;
-    background: rgba(16, 185, 129, 0.1);
+    border-color: #7fb069;
+    background: rgba(127, 176, 105, 0.15);
 }
 
-/* === SECOND COLUMN: Card Piles Section === */
-.piles-section {
-    grid-area: piles;
-    background: var(--bg-primary);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg);
-    border: 0.67px solid var(--border-color); /* 1px * 0.67 */
-    backdrop-filter: blur(6.7px); /* 10px * 0.67 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-md);
-    height: 100%;
-}
 
-.pile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xl);
-    width: 100%;
-    flex: 1;
-}
 
 .pile-group {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-md);
+}
+
+/* Draw pile takes less space */
+.pile-group:first-child {
+    flex: 0 0 auto; /* Fixed size for draw pile */
+    width: 80px; /* Compact width for draw pile */
+}
+
+/* Discard pile gets more space for overlapping cards */
+.pile-group:last-child {
+    flex: 1; /* Takes remaining space */
+    min-width: 100px; /* Minimum width for proper card display */
 }
 
 .pile-title {
@@ -1295,23 +1312,31 @@ body {
     gap: var(--spacing-sm);
 }
 
+/* Ensure discard pile container takes full width of its parent */
+.discard-pile-container {
+    width: 100%; /* Take full width available in the pile group */
+    align-items: stretch; /* Stretch child elements to full width */
+}
+
 .pile-separator {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Changed to vertical for horizontal layout */
     align-items: center;
-    gap: var(--spacing-sm);
-    width: 100%;
+    gap: 2px; /* Very small gap for compact separator */
     justify-content: center;
+    flex: 0 0 auto; /* Fixed size, don't grow */
+    width: 30px; /* Compact width for separator */
+    margin: 0 var(--spacing-xs); /* Small margins on sides */
 }
 
 .separator-line {
-    height: 1.34px; /* 2px * 0.67 */
-    width: 26.8px; /* 40px * 0.67 */
-    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    width: 1.34px; /* 2px * 0.67 - Changed to vertical line */
+    height: 26.8px; /* 40px * 0.67 - Changed to vertical line */
+    background: linear-gradient(to bottom, transparent, var(--border-color), transparent);
 }
 
 .separator-text {
-    background: var(--secondary-gradient);
+    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2c8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1322,6 +1347,7 @@ body {
 .discard-pile {
     min-width: 60.3px; /* 90px * 0.67 */
     min-height: 87.1px; /* 130px * 0.67 */
+    width: 100%; /* Take full available width in parent */
     border: 1.34px dashed var(--border-color); /* 2px * 0.67 */
     border-radius: var(--border-radius);
     display: flex;
@@ -1330,6 +1356,7 @@ body {
     position: relative;
     background: var(--bg-tertiary);
     padding-left: 0; /* Remove left padding */
+    overflow: visible; /* Allow cards to extend beyond bounds if needed */
 }
 
 .empty-pile-text {
@@ -1374,10 +1401,11 @@ body {
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
     flex: 1;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
     gap: var(--spacing-md);
+    align-content: start; /* Align grid content to top */
 }
 
 .empty-melds {
@@ -1408,45 +1436,224 @@ body {
     opacity: 0.8;
 }
 
-/* === RIGHT COLUMN: Scoreboard Section === */
-.scoreboard-section {
-    grid-area: scoreboard;
-    background: var(--bg-primary);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg);
-    border: 0.67px solid var(--border-color); /* 1px * 0.67 */
-    backdrop-filter: blur(6.7px); /* 10px * 0.67 */
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    height: 100%;
-    overflow-y: auto;
-}
+
 
 .scoreboard {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xs);
     flex: 1;
+    /* Fixed height to show exactly 3 players with scrolling for more */
+    max-height: 205px; /* Approximately 3 player entries + padding */
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .scoreboard > div {
-    background: var(--bg-secondary);
+    margin-bottom: 4px;
+    background: var(--bg-secondary); /* Default background for all players */
     border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    border: 0.67px solid var(--border-color); /* 1px * 0.67 */
+    padding: var(--spacing-xs);
+    border: 0.67px solid var(--border-color); /* Default border */
     text-align: center;
     transition: var(--transition-fast);
+    flex-shrink: 0; /* Prevent individual entries from shrinking */
+    min-height: 50px; /* Consistent height for each player entry */
 }
 
 .scoreboard > div:hover {
-    background: var(--bg-tertiary);
+    background: var(--bg-tertiary); /* Default hover for all players */
     transform: translateY(-0.67px); /* -1px * 0.67 */
 }
 
-/* === BOTTOM CENTER: Player Hand Section === */
+/* 1st place winner styling - transparent golden gradient */
+.scoreboard > div.first-place {
+    background: linear-gradient(135deg, rgba(254, 243, 199, 0.25) 0%, rgba(253, 230, 138, 0.35) 100%); /* Semi-transparent golden gradient */
+    border: 0.67px solid rgba(212, 165, 116, 0.6); /* Semi-transparent golden border */
+    box-shadow: 0 1px 3px rgba(212, 165, 116, 0.15); /* Subtle transparent golden shadow */
+    backdrop-filter: blur(1px); /* Subtle blur effect for elegance */
+}
+
+.scoreboard > div.first-place:hover {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.4) 0%, rgba(245, 158, 11, 0.5) 100%); /* Richer transparent golden hover */
+    box-shadow: 0 2px 6px rgba(212, 165, 116, 0.25); /* Enhanced transparent golden shadow on hover */
+    backdrop-filter: blur(2px); /* Slightly more blur on hover */
+}
+
+/* Cup icon styling for 1st place winner */
+.scoreboard-winner-icon {
+    display: inline-block;
+    margin-right: 4px; /* Small gap between cup and player name */
+    font-size: 0.7rem; /* Slightly larger than text for prominence */
+    color: #f59e0b; /* Lighter golden color for better visibility */
+    vertical-align: middle;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for contrast */
+}
+
+/* Player name styling in scoreboard - default colors */
+.scoreboard-player-name {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--text-primary); /* Default text color */
+    vertical-align: middle;
+}
+
+/* Player name styling for 1st place winner - lighter golden colors */
+.scoreboard > div.first-place .scoreboard-player-name {
+    color: #f59e0b; /* Lighter golden amber for better readability */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle shadow for contrast */
+}
+
+/* Score styling in scoreboard - default colors */
+.scoreboard-player-score {
+    font-weight: 700;
+    color: var(--text-primary); /* Default text color */
+    font-size: 1.1em; /* Slightly larger for emphasis */
+}
+
+/* Score styling for 1st place winner - lighter golden colors */
+.scoreboard > div.first-place .scoreboard-player-score {
+    color: #f59e0b; /* Lighter golden amber for better readability */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle shadow for contrast */
+}
+
+/* Status text styling in scoreboard - default colors */
+.scoreboard-player-status {
+    color: var(--text-secondary); /* Default secondary text color */
+    opacity: 0.9;
+    font-size: 0.85em;
+}
+
+/* Status text styling for 1st place winner - lighter golden colors */
+.scoreboard > div.first-place .scoreboard-player-status {
+    color: #fbbf24; /* Lighter golden yellow for status text readability */
+    opacity: 0.95; /* Slightly higher opacity for better visibility */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Very subtle shadow for contrast */
+}
+
+/* Hide scrollbar for scoreboard while keeping scroll functionality */
+.scoreboard::-webkit-scrollbar {
+    width: 0px; /* Hide scrollbar for Webkit browsers */
+    background: transparent; /* Make scrollbar invisible */
+}
+
+.scoreboard::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scoreboard::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+.scoreboard {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Custom scrollbar for opponents grid */
+.opponents-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.opponents-grid::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 3px;
+    margin: 2px 0;
+}
+
+.opponents-grid::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.opponents-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+.opponents-grid {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--border-color) var(--bg-tertiary); /* Firefox */
+}
+
+/* Hide scrollbar for table melds while keeping scroll functionality */
+.table-melds::-webkit-scrollbar {
+    width: 0px; /* Hide scrollbar for Webkit browsers */
+    background: transparent; /* Make scrollbar invisible */
+}
+
+.table-melds::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-melds::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+.table-melds {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Visual indicator for scrollable scoreboard */
+.scoreboard-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(to top, var(--bg-primary), transparent);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scoreboard-section.has-scroll::after {
+    opacity: 1;
+}
+
+/* Add relative positioning to scoreboard section for the pseudo-element */
+.scoreboard-section {
+    position: relative;
+}
+
+/* === BOTTOM SECTION: Asymmetric Hand and Piles Columns (30/70 split) === */
+.hand-and-piles-section {
+    grid-area: hand-and-piles;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    height: 100%;
+}
+
+/* === BOTTOM LEFT: Card Piles (Compact Column ~30-35%) === */
+.piles-section {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    border: 0.67px solid var(--border-color); /* 1px * 0.67 */
+    backdrop-filter: blur(6.7px); /* 10px * 0.67 */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    flex: 0.27; /* Smaller flex value for ~30-35% width */
+    min-width: 200px; /* Ensure minimum width for proper pile display */
+}
+
+.pile-container {
+    display: flex;
+    flex-direction: row; /* Changed to horizontal layout */
+    align-items: center;
+    justify-content: flex-start; /* Align to left for better control */
+    gap: var(--spacing-sm); /* Reduced gap for more compact layout */
+    width: 100%;
+}
+
+/* === BOTTOM RIGHT: Player Hand Section (Expanded Column ~65-70%) === */
 .hand-section {
-    grid-area: hand-and-controls-area;
     background: var(--bg-primary);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-lg);
@@ -1454,7 +1661,8 @@ body {
     backdrop-filter: blur(6.7px); /* 10px * 0.67 */
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xs);
+    flex: 1; /* Takes remaining space (~65-70% with piles at flex: 0.5) */
 }
 
 .hand-header {
@@ -1483,14 +1691,62 @@ body {
     letter-spacing: 0.335px; /* 0.5px * 0.67 */
 }
 
-.player-status.status-normal {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-    color: white;
+.player-status.status-normal,
+.status-indicator.status-normal {
+    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%) !important;
+    color: white !important;
+    padding: var(--spacing-xs) var(--spacing-md) !important;
+    border-radius: 13.4px !important; /* 20px * 0.67 */
+    font-size: 0.5695rem !important; /* 0.85rem * 0.67 */
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.335px !important; /* 0.5px * 0.67 */
+    display: inline-block !important;
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
 }
 
-.player-status.status-sallan {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: white;
+/* Consistent Sallan status styling for all players - unified definition */
+.sallan-status,
+.player-status.status-sallan,
+.status-indicator.status-sallan {
+    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%) !important;
+    color: white !important;
+    padding: var(--spacing-xs) var(--spacing-md) !important;
+    border-radius: 13.4px !important; /* 20px * 0.67 */
+    font-size: 0.5695rem !important; /* 0.85rem * 0.67 */
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.335px !important; /* 0.5px * 0.67 */
+    display: inline-block !important;
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Opponent player area header layout */
+.player-area .flex.justify-between.items-center {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Ensure status indicators are properly positioned on the right */
+.player-area .status-indicator {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* Player name styling in opponent areas */
+.player-area .text-white.font-bold,
+.player-area .text-white.font-bold.text-sm {
+    flex: 1;
+    text-align: left;
+    margin-right: var(--spacing-sm); /* Increased margin with more space */
+    font-size: 0.75rem !important; /* Larger font with more space available */
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    line-height: 1.3; /* Better line height for readability */
 }
 
 .hand-stats {
@@ -1553,11 +1809,10 @@ body {
     gap: var(--spacing-md);
     justify-content: center;
     padding-top: var(--spacing-md);
-    margin-top: var(--spacing-md);
     border-top: 0.67px solid var(--border-color); /* 1px * 0.67 */
     background: var(--bg-primary);
     border-radius: var(--border-radius);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-sm);
     width: 100%;
     align-items: center;
 }
@@ -1568,32 +1823,50 @@ body {
     flex-wrap: wrap;
     gap: var(--spacing-sm);
     flex: 1 1 auto;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between; /* Changed to space-between for left/right alignment */
+    align-items: center;
 }
 
 .control-group {
     display: flex;
     flex-direction: row;
     gap: var(--spacing-sm);
-    flex: 1 1 auto;
-    min-width: 60.3px; /* 90px * 0.67 */
+    flex: 0 0 auto; /* Prevent flex-grow to maintain button consistency */
     justify-content: center;
+    align-items: center;
+}
+
+/* Left side button groups wrapper */
+.control-groups-left {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Left side button groups */
+.control-group.primary,
+.control-group.secondary {
+    justify-content: flex-start;
 }
 
 .control-group.tertiary {
-    flex-basis: 100%;
-    max-width: 134px; /* 200px * 0.67 */
-    margin: 0 auto;
+    flex-basis: auto; /* Allow natural sizing based on button widths */
+    margin-left: auto; /* Push to the right side */
+    justify-content: flex-end; /* Align buttons to the right */
+    align-self: center;
 }
 
 .control-btn {
-    flex: 1;
+    flex: 0 0 auto; /* Prevent flex-grow, allow consistent sizing */
+    width: 120px; /* Fixed width for consistency */
+    max-width: 120px; /* Prevent buttons from becoming too wide */
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Horizontal layout */
     align-items: center;
-    gap: var(--spacing-xs);
-    padding: var(--spacing-sm);
+    gap: var(--spacing-sm); /* Spacing between icon and text */
+    padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -1602,8 +1875,8 @@ body {
     font-size: 0.603rem; /* 0.9rem * 0.67 */
     position: relative;
     overflow: hidden;
-    min-height: 36.85px; /* 55px * 0.67 */
-    justify-content: center;
+    min-height: 40px; /* Standardized height for all buttons */
+    justify-content: center; /* Center-align content */
 }
 
 .control-btn::before {
@@ -1635,52 +1908,75 @@ body {
 }
 
 .control-btn.primary {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
     color: white;
 }
 
 .control-btn.success {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
     color: white;
 }
 
 .control-btn.warning {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
     color: white;
 }
 
 .control-btn.danger {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
     color: white;
 }
 
 .control-btn.end-turn {
-    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    background: linear-gradient(135deg, #81a1c1 0%, #8b9dc3 100%);
     color: white;
+    /* Make End Turn button more prominent while maintaining consistent width */
+    flex: 0 0 auto; /* Override flex to maintain consistent width */
+    width: 120px; /* Same width as other buttons */
+    max-width: 120px; /* Consistent max-width */
+    min-height: 40px; /* Standardized height */
+    font-size: 0.67rem; /* Slightly larger font */
+    font-weight: 700; /* Bolder text */
+}
+
+.control-btn.clear-selection,
+.control-btn.danger.clear-selection {
+    /* Make Clear Selection button less prominent while maintaining consistent width */
+    flex: 0 0 auto; /* Override flex to maintain consistent width */
+    width: 120px; /* Same width as other buttons */
+    max-width: 120px; /* Consistent max-width */
+    min-height: 40px; /* Standardized height */
+    font-size: 0.55rem; /* Smaller font */
+    font-weight: 500; /* Less bold */
 }
 
 .control-btn.undo {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #b48ead 0%, #a8b5d1 100%);
     color: white;
 }
 
 .control-btn.undo:hover:not(:disabled) {
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    background: linear-gradient(135deg, #a8b5d1 0%, #9bb0c7 100%);
 }
 
 .control-btn.undo:disabled {
-    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    background: linear-gradient(135deg, #81a1c1 0%, #8b9dc3 100%);
     opacity: 0.5;
     cursor: not-allowed;
 }
 
 .btn-icon {
     font-size: 0.804rem; /* 1.2rem * 0.67 */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    display: inline-block;
 }
 
 .btn-text {
     font-size: 0.67rem; /* 1rem * 0.67 */
     font-weight: 600;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* === FLOATING GAME LOG SECTION === */
@@ -1783,22 +2079,22 @@ body {
 }
 
 .log-success {
-    color: #10b981;
+    color: #7fb069;
     font-weight: 500;
 }
 
 .log-error {
-    color: #ef4444;
+    color: #d4a5a5;
     font-weight: 500;
 }
 
 .log-warning {
-    color: #f59e0b;
+    color: #e6b17a;
     font-weight: 500;
 }
 
 .log-turn {
-    color: #3b82f6;
+    color: #8b9dc3;
     font-weight: 600;
 }
 
@@ -1829,19 +2125,26 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+/* Potter cards in hand - maintain animation on hover */
+.card.potter:hover {
+    border-color: #ebcb8b !important;
+    box-shadow: 0 0 20px rgba(235, 203, 139, 0.8), var(--shadow-md) !important;
+    animation: potter-glow 2s ease-in-out infinite !important;
+}
+
 .card.selected {
     transform: translateY(-10.05px); /* -15px * 0.67 */
-    border-color: #3b82f6;
-    box-shadow: 0 10.05px 23.45px rgba(59, 130, 246, 0.4), 0 0 13.4px rgba(59, 130, 246, 0.7); /* (0 15px 35px), (0 0 20px) * 0.67 */
+    border-color: #8b9dc3;
+    box-shadow: 0 10.05px 23.45px rgba(139, 157, 195, 0.4), 0 0 13.4px rgba(139, 157, 195, 0.6); /* (0 15px 35px), (0 0 20px) * 0.67 */
     z-index: 10;
 }
 
 .card.red {
-    color: #dc2626;
+    color: #bf616a;
 }
 
 .card.black {
-    color: #1f2937;
+    color: #3b4252;
 }
 
 .card .rank {
@@ -1856,8 +2159,8 @@ body {
 }
 
 .card.back {
-    background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
-    border-color: #8b5cf6;
+    background: linear-gradient(135deg, #5e81ac 0%, #8b9dc3 100%);
+    border-color: #a8b5d1;
     color: white;
     display: flex;
     align-items: center;
@@ -1872,17 +2175,17 @@ body {
 }
 
 .card.potter {
-    border-color: #facc15;
-    box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.6); /* 20px * 0.67 */
-    animation: potter-glow 2s ease-in-out infinite;
+    border-color: #ebcb8b !important;
+    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important; /* 20px * 0.67 */
+    animation: potter-glow 2s ease-in-out infinite !important;
 }
 
 @keyframes potter-glow {
     0%, 100% {
-        box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.6); /* 20px * 0.67 */
+        box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important; /* 20px * 0.67 */
     }
     50% {
-        box-shadow: 0 0 23.45px rgba(251, 191, 36, 0.9); /* 35px * 0.67 */
+        box-shadow: 0 0 23.45px rgba(235, 203, 139, 0.8) !important; /* 35px * 0.67 */
     }
 }
 
@@ -1890,21 +2193,21 @@ body {
 .ai-hand {
     display: flex;
     justify-content: center;
-    margin-top: var(--spacing-sm);
-    min-height: 46.9px; /* 70px * 0.67 */
+    margin-top: var(--spacing-sm); /* Increased margin with more space available */
+    min-height: 45px; /* Increased height for better appearance */
     overflow: hidden;
     position: relative;
-    padding-left: var(--spacing-sm);
+    padding-left: var(--spacing-sm); /* Increased padding */
 }
 
 .ai-card {
-    width: 33.5px; /* 50px * 0.67 */
-    height: 46.9px; /* 70px * 0.67 */
-    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+    width: 28px; /* Slightly larger with more space available */
+    height: 40px; /* Increased height for better appearance */
+    background: linear-gradient(135deg, #4c566a 0%, #5e81ac 100%);
     border: 0.67px solid var(--border-color); /* 1px * 0.67 */
     border-radius: 2.68px; /* 4px * 0.67 */
     flex-shrink: 0;
-    margin-left: -14.74px; /* -22px * 0.67 */
+    margin-left: -20px; /* Adjusted overlap for larger cards */
     position: relative;
     z-index: 1;
     box-shadow: var(--shadow-sm);
@@ -1923,54 +2226,73 @@ body {
     transition: var(--transition-fast);
     cursor: pointer;
     display: flex;
-    align-items: center;
-    gap: var(--spacing-lg); /* Add gap between text elements and cards */
-    justify-content: flex-start; /* Align meld content to left */
-    position: relative; /* Required for absolute positioning of Potter indicator */
-    padding-left: calc(var(--spacing-md) + 8px); /* Extra padding for first card */
-    padding-right: calc(var(--spacing-md) + 40px); /* Extra padding for Potter indicator on right */
+    flex-direction: row; /* Horizontal layout: text on left, cards on right */
+    align-items: center; /* Center align content vertically */
+    gap: var(--spacing-md); /* Gap between text and cards */
+    justify-content: flex-start;
+    position: relative;
+    min-height: 80px; /* Reduced height for horizontal layout */
+    width: 100%; /* Take full width of grid column */
 }
 
 /* Container for text elements (player name and meld type) */
 .meld-text-group {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    flex-shrink: 0; /* Prevent text from shrinking */
-    min-width: fit-content; /* Ensure text has enough space */
+    flex-direction: column; /* Stack player name and meld type vertically */
+    align-items: flex-start; /* Left align text */
+    justify-content: center;
+    gap: 2px; /* Small gap between name and type */
+    flex-shrink: 0;
+    min-width: 80px; /* Minimum width for text area */
+    max-width: 120px; /* Maximum width to prevent text from taking too much space */
+    text-align: left;
 }
 
 /* Container for cards to maintain overlap effect */
 .meld-cards-group {
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Left align cards after text */
     gap: 0; /* No gap between cards to maintain overlap */
-    flex: 1; /* Allow cards to take remaining space */
+    flex: 1; /* Take remaining space */
+    overflow: hidden; /* Prevent cards from overflowing */
+    padding-left: var(--spacing-sm); /* Small padding from text */
 }
 
 .table-melds > div:hover {
     background: var(--bg-tertiary);
-    border-color: rgba(59, 130, 246, 0.5);
+    border-color: rgba(139, 157, 195, 0.5);
 }
 
 .table-melds > div.selected {
-    border-color: #facc15;
-    box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.3); /* 20px * 0.67 */
-    background: rgba(251, 191, 36, 0.1);
+    border-color: #ebcb8b;
+    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.4); /* 20px * 0.67 */
+    background: rgba(235, 203, 139, 0.12);
 }
 
 /* Specific styling for cards within table melds only */
 .table-melds .card {
-    margin-left: -25px; /* Increased overlap for better space efficiency */
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better separation */
+    margin-left: -20px; /* Optimized overlap for horizontal layout in two columns */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1;
     position: relative;
-    align-items: flex-start; /* Left-align card content */
-    justify-content: flex-start; /* Align content to top-left */
-    padding: 5.36px 2.68px 2.68px 5.36px; /* Enhanced top and left padding for better positioning */
-    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient background */
-    border: 1.34px solid #e2e8f0; /* Softer border color */
-    transition: all 0.2s ease-in-out; /* Smooth transitions */
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 5.36px 2.68px 2.68px 5.36px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1.34px solid #2c343e80;
+    transition: all 0.2s ease-in-out;
+    width: 45px; /* Compact width for horizontal layout */
+    height: 65px; /* Proportional height */
+    font-size: 7px; /* Readable font size */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+/* Potter cards in table melds - ensure animation works */
+.table-melds .card.potter {
+    border-color: #ebcb8b !important;
+    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important;
+    animation: potter-glow 2s ease-in-out infinite !important;
 }
 
 .table-melds .card:first-child {
@@ -1984,6 +2306,13 @@ body {
     border-color: #cbd5e1; /* Slightly darker border on hover */
 }
 
+/* Potter cards in table melds - maintain animation on hover */
+.table-melds .card.potter:hover {
+    border-color: #ebcb8b !important; /* Keep Potter border color on hover */
+    box-shadow: 0 0 20px rgba(235, 203, 139, 0.8), 4px 8px 16px rgba(0, 0, 0, 0.4) !important; /* Combine Potter glow with hover shadow */
+    animation: potter-glow 2s ease-in-out infinite !important; /* Maintain animation on hover */
+}
+
 /* Position rank and suit vertically in table meld cards - suit directly below rank */
 .table-melds .card .rank {
     align-self: flex-start; /* Ensure rank stays left-aligned */
@@ -1995,6 +2324,24 @@ body {
     transform: none; /* Remove rotation to keep suit upright */
     opacity: 0.9; /* Subtle opacity for visual hierarchy */
     margin-top: -2px; /* Pull suit closer to rank */
+}
+
+/* Styling for text elements within meld text group */
+.meld-text-group .player-name {
+    font-size: 0.65rem; /* Compact player name */
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.meld-text-group .meld-type {
+    font-size: 0.55rem; /* Smaller meld type text */
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.1;
+    margin: 0;
+    opacity: 0.8;
 }
 
 /* === DISCARD PILE OVERLAPPING CARD STYLES === */
@@ -2020,16 +2367,29 @@ body {
     box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3) !important; /* Enhanced hover shadow */
 }
 
+/* Potter cards in discard pile - maintain animation */
+.discard-pile-card.potter {
+    border-color: #ebcb8b !important;
+    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important;
+    animation: potter-glow 2s ease-in-out infinite !important;
+}
+
+.discard-pile-card.potter:hover {
+    border-color: #ebcb8b !important;
+    box-shadow: 0 0 20px rgba(235, 203, 139, 0.8), 4px 8px 16px rgba(0, 0, 0, 0.4) !important;
+    animation: potter-glow 2s ease-in-out infinite !important;
+}
+
 /* Potter indicator positioning for table melds - position in red square location */
 .table-melds .text-xs.text-yellow-400.ml-2.font-bold {
-    background: linear-gradient(45deg, #facc15, #f59e0b);
-    color: #000;
+    background: linear-gradient(45deg, #ebcb8b, #e6b17a);
+    color: #2e3440;
     border-radius: 4px;
     padding: 2px 6px;
     font-size: 10px;
     font-weight: bold;
-    border: 1px solid #d97706;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    border: 1px solid #d4a574;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     position: absolute;
     right: 8px; /* Position in the red square area (right side) */
     top: 50%;
@@ -2042,11 +2402,21 @@ body {
 /* === RESPONSIVE DESIGN (Media query breakpoints are NOT scaled) === */
 @media (max-width: 1400px) {
     .game-container {
-        grid-template-columns: 201px 134px 1fr 201px; /* Adjusted for new 4-column layout */
+        grid-template-columns: 1fr 160px; /* Updated for new 2-column layout */
     }
 
     .player-area {
-        flex-basis: 107.2px; /* 160px * 0.67 */
+        flex-basis: 75px; /* Further reduced for narrower opponents section */
+    }
+
+    /* Maintain right alignment on mobile */
+    .player-area .flex.justify-between.items-center {
+        flex-wrap: nowrap !important;
+    }
+
+    .player-area .status-indicator {
+        font-size: 0.5rem !important; /* Slightly smaller on mobile */
+        padding: 2px 6px !important; /* Reduced padding on mobile */
     }
 
     .card {
@@ -2062,19 +2432,28 @@ body {
     }
 
     .ai-card {
-        width: 30.15px; /* 45px * 0.67 */
-        height: 43.55px; /* 65px * 0.67 */
-        margin-left: -13.4px; /* -20px * 0.67 */
+        width: 24px; /* Further reduced for compact layout */
+        height: 34px; /* Further reduced for compact layout */
+        margin-left: -16px; /* Increased overlap */
     }
 
     /* Responsive table meld card overlapping for 1400px breakpoint */
     .table-melds .card {
-        margin-left: -20px; /* Increased overlap for smaller screens */
+        margin-left: -18px; /* Adjusted overlap for smaller screens in two-column layout */
+        width: 45px; /* Smaller cards for smaller screens */
+        height: 65px;
+        font-size: 7px;
     }
 
-    /* Reduce gap between text and cards on smaller screens */
+    /* Adjust two-column layout for smaller screens */
     .table-melds > div {
-        gap: var(--spacing-md); /* Reduced gap for smaller screens */
+        gap: var(--spacing-sm); /* Reduced gap for smaller screens */
+        min-height: 70px; /* Reduced height for horizontal layout */
+    }
+
+    .meld-text-group {
+        min-width: 70px; /* Smaller text area on smaller screens */
+        max-width: 100px;
     }
 
     .player-controls-bottom {
@@ -2085,20 +2464,33 @@ body {
 @media (max-width: 1200px) {
     .game-container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas:
             "header"
-            "opponents"
-            "piles"
             "melds"
-            "scoreboard"
-            "hand-and-controls-area";
+            "right-column"
+            "hand-and-piles";
         overflow-y: auto;
         height: auto;
     }
 
+    /* Stack piles and hand vertically on mobile */
+    .hand-and-piles-section {
+        flex-direction: column;
+    }
+
+    .piles-section {
+        min-width: auto;
+    }
+
     .player-area {
-        flex-basis: 93.8px; /* 140px * 0.67 */
+        flex-basis: 65px; /* Further reduced for compact layout */
+    }
+
+    /* Maintain layout integrity on smaller tablets */
+    .player-area .status-indicator {
+        font-size: 0.48rem !important; /* Even smaller on tablets */
+        padding: 1px 4px !important; /* Further reduced padding */
     }
 
     .card {
@@ -2114,14 +2506,23 @@ body {
     }
 
     .ai-card {
-        width: 26.8px; /* 40px * 0.67 */
-        height: 36.85px; /* 55px * 0.67 */
-        margin-left: -12.06px; /* -18px * 0.67 */
+        width: 22px; /* Further reduced for compact layout */
+        height: 30px; /* Further reduced for compact layout */
+        margin-left: -15px; /* Increased overlap */
+    }
+
+    /* Switch to single column on medium screens */
+    .table-melds {
+        grid-template-columns: 1fr; /* Single column for medium screens */
+        gap: var(--spacing-md);
     }
 
     /* Responsive table meld card overlapping for 1200px breakpoint */
     .table-melds .card {
-        margin-left: -18px; /* Increased overlap for medium screens */
+        margin-left: -18px; /* Overlap for single column */
+        width: 50px; /* Larger cards in single column */
+        height: 72px;
+        font-size: 8px;
     }
 
     /* Responsive discard pile card overlapping for 1200px breakpoint */
@@ -2129,9 +2530,25 @@ body {
         margin-left: -35px !important; /* Much tighter overlap for medium screens */
     }
 
-    /* Further reduce gap between text and cards on medium screens */
+    /* Adjust meld layout for single column - horizontal layout */
     .table-melds > div {
-        gap: var(--spacing-sm); /* Further reduced gap for medium screens */
+        flex-direction: row; /* Horizontal layout in single column */
+        align-items: center;
+        gap: var(--spacing-md); /* More space in single column */
+        min-height: 75px; /* Comfortable height for single column */
+    }
+
+    .meld-text-group {
+        align-items: flex-start; /* Left align text in single column */
+        text-align: left;
+        width: auto;
+        min-width: 90px;
+        padding-bottom: 0;
+    }
+
+    .meld-cards-group {
+        justify-content: flex-start; /* Left align cards in single column */
+        padding-left: var(--spacing-md);
     }
 
     .player-controls-bottom {
@@ -2143,17 +2560,25 @@ body {
     .control-groups {
         flex-direction: column;
         width: 100%;
+        align-items: center;
+    }
+
+    .control-groups-left {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        width: 100%;
+        align-items: center;
     }
 
     .control-group {
         flex-direction: row;
-        width: 100%;
         justify-content: center;
+        flex: 0 0 auto; /* Maintain consistent sizing */
     }
 
     .control-group.tertiary {
-        max-width: none;
-        margin: 0;
+        margin: var(--spacing-sm) auto 0;
+        justify-content: center;
     }
 }
 
@@ -2191,8 +2616,12 @@ body {
     }
 
     .control-btn {
-        min-height: 33.5px; /* 50px * 0.67 */
+        width: 110px; /* Slightly smaller width for mobile */
+        max-width: 110px; /* Consistent max-width on mobile */
+        min-height: 40px; /* Maintain standardized height on mobile */
         font-size: 0.536rem; /* 0.8rem * 0.67 */
+        padding: var(--spacing-xs) var(--spacing-sm); /* Adjust padding for mobile */
+        flex: 0 0 auto; /* Maintain consistent sizing */
     }
 
     .btn-icon {
@@ -2201,6 +2630,11 @@ body {
 
     .btn-text {
         font-size: 0.5695rem; /* 0.85rem * 0.67 */
+    }
+
+    /* Ensure horizontal layout works on mobile */
+    .control-btn {
+        gap: var(--spacing-xs); /* Reduce gap on mobile */
     }
 
     .meld-modal-content {
@@ -2220,7 +2654,10 @@ body {
 
     /* Responsive table meld card overlapping for 768px breakpoint */
     .table-melds .card {
-        margin-left: -15px; /* Increased overlap for small screens */
+        margin-left: -12px; /* Tighter overlap for small screens */
+        width: 40px; /* Smaller cards for mobile */
+        height: 58px;
+        font-size: 6px;
     }
 
     /* Responsive discard pile card overlapping for 768px breakpoint */
@@ -2231,6 +2668,20 @@ body {
     /* Minimal gap between text and cards on small screens */
     .table-melds > div {
         gap: var(--spacing-xs); /* Minimal gap for small screens */
+        min-height: 60px; /* Compact height for mobile */
+    }
+
+    .meld-text-group {
+        min-width: 60px; /* Compact text area for mobile */
+        max-width: 80px;
+    }
+
+    .meld-text-group .player-name {
+        font-size: 0.55rem; /* Smaller text for mobile */
+    }
+
+    .meld-text-group .meld-type {
+        font-size: 0.5rem; /* Even smaller meld type for mobile */
     }
 
     /* Stack text elements vertically on very small screens if needed */
@@ -2254,8 +2705,20 @@ body {
 
 @media (max-width: 480px) {
     .control-btn {
-        width: 100%;
-        flex-basis: auto;
+        width: 100px; /* Smaller width for very small screens */
+        max-width: 100px; /* Consistent max-width */
+        flex: 0 0 auto; /* Maintain consistent sizing */
+        min-height: 40px; /* Maintain standardized height */
+        padding: var(--spacing-xs); /* Reduce padding on very small screens */
+        gap: var(--spacing-xs); /* Smaller gap for very small screens */
+    }
+
+    .btn-text {
+        font-size: 0.5rem; /* Slightly smaller text on very small screens */
+    }
+
+    .btn-icon {
+        font-size: 0.7rem; /* Slightly smaller icons on very small screens */
     }
 
     .game-title {
@@ -2341,12 +2804,12 @@ body {
 .select-meld-btn:focus,
 .cancel-meld-btn:focus,
 .log-toggle-button:focus {
-    outline: 1.34px solid #3b82f6; /* 2px * 0.67 */
+    outline: 1.34px solid #8b9dc3; /* 2px * 0.67 */
     outline-offset: 1.34px; /* 2px * 0.67 */
 }
 
 .meld-option:focus {
-    outline: 1.34px solid #3b82f6; /* 2px * 0.67 */
+    outline: 1.34px solid #8b9dc3; /* 2px * 0.67 */
     outline-offset: 1.34px; /* 2px * 0.67 */
 }
 
@@ -2365,28 +2828,21 @@ body {
 }
 
 .current-turn {
-    color: #4ade80;
+    color: #7fb069;
     font-weight: bold;
 }
 
 .active-player {
-    background-color: rgba(74, 222, 128, 0.1);
-    border: 2px solid #4ade80;
+    background-color: rgba(127, 176, 105, 0.15);
+    border: 2px solid #7fb069;
     border-radius: 8px;
     padding: 8px;
 }
 
-.sallan-status {
-    background-color: #fbbf24;
-    color: #92400e;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: bold;
-}
+/* Sallan status styling is now unified above - this duplicate definition removed */
 
 .card-count {
-    color: #9ca3af;
+    color: #a3a9b8;
     font-size: 14px;
 }
 
@@ -2399,33 +2855,33 @@ body {
     align-items: center;
     justify-content: center;
     height: 100px;
-    color: #9ca3af;
+    color: #a3a9b8;
     font-style: italic;
-    border: 2px dashed #374151;
+    border: 2px dashed #4c566a;
     border-radius: 8px;
-    background-color: rgba(55, 65, 81, 0.1);
+    background-color: rgba(76, 86, 106, 0.12);
 }
 
 .active-player {
-    background-color: rgba(74, 222, 128, 0.1);
-    border: 2px solid #4ade80;
+    background-color: rgba(127, 176, 105, 0.15);
+    border: 2px solid #7fb069;
     border-radius: 8px;
     padding: 8px;
-    box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+    box-shadow: 0 0 10px rgba(127, 176, 105, 0.4);
 }
 
 .potter-indicator-small {
     position: absolute;
     top: 1px;
     left: 1px; /* Changed from right to left for left alignment */
-    background: linear-gradient(45deg, #facc15, #f59e0b);
-    color: #000;
+    background: linear-gradient(45deg, #ebcb8b, #e6b17a);
+    color: #2e3440;
     border-radius: 2px;
     padding: 0 2px;
     font-size: 6px;
     font-weight: bold;
-    border: 0.5px solid #d97706;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    border: 0.5px solid #d4a574;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
     z-index: 10;
     line-height: 1;
 }
@@ -2448,16 +2904,16 @@ body {
 }
 
 .meld-card-preview.red {
-    color: #dc2626;
+    color: #bf616a;
 }
 
 .meld-card-preview.black {
-    color: #1f2937;
+    color: #3b4252;
 }
 
 .meld-card-preview.potter {
-    border-color: #facc15;
-    box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+    border-color: #ebcb8b;
+    box-shadow: 0 0 8px rgba(235, 203, 139, 0.6);
 }
 
 .preview-card-content {
@@ -2480,7 +2936,7 @@ body {
 }
 
 .meld-card-preview.error {
-    background: #ef4444;
+    background: #d4a5a5;
     color: white;
     display: flex;
     align-items: center;
@@ -2491,7 +2947,7 @@ body {
 .no-melds {
     text-align: center;
     padding: 20px;
-    color: #94a3b8;
+    color: #a3a9b8;
     font-style: italic;
 }
 
@@ -2504,9 +2960,9 @@ body {
 }
 
 .meld-option.selected {
-    border-color: #10b981;
-    background: rgba(16, 185, 129, 0.2);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    border-color: #7fb069;
+    background: rgba(127, 176, 105, 0.2);
+    box-shadow: 0 0 15px rgba(127, 176, 105, 0.3);
 }
 
 /* Custom Styles for Rules Modal */
@@ -2548,4 +3004,4 @@ body {
     color: var(--text-primary);
 }
 
-/*# sourceMappingURL=main.7acc4b0bbd130882a269.css.map*/
+/*# sourceMappingURL=main.9497b6f6b64d2d729b7b.css.map*/
