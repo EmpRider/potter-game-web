@@ -1,25 +1,28 @@
 /* Potter Card Game Styles - Scaled down by 0.67 factor */
 
-/* === ROOT VARIABLES (Scaled) === */
+/* === ROOT VARIABLES (Scaled) - HIGH CONTRAST THEME === */
 :root {
-    /* Eye-friendly Color Palette */
-    --primary-gradient: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
-    --secondary-gradient: linear-gradient(135deg, #d4a5a5 0%, #c8a2c8 100%);
-    --success-gradient: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
-    --warning-gradient: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
-    --danger-gradient: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
+    /* High-Contrast Grayscale Palette */
+    --primary-gradient: linear-gradient(135deg, #e5e5e5 0%, #f5f5f5 100%);
+    --secondary-gradient: linear-gradient(135deg, #d0d0d0 0%, #e0e0e0 100%);
+    --success-gradient: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); /* Keep green for success */
+    --warning-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); /* Keep amber for warnings */
+    --danger-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* Keep red for danger */
 
-    --bg-primary: rgba(35, 40, 50, 0.92);
-    --bg-secondary: rgba(60, 68, 85, 0.4);
-    --bg-tertiary: rgba(100, 125, 150, 0.2);
-    --bg-card: rgba(248, 249, 250, 0.98);
+    /* High-Contrast Backgrounds */
+    --bg-primary: rgba(15, 15, 15, 0.95); /* Deep charcoal, nearly black */
+    --bg-secondary: rgba(45, 45, 45, 0.85); /* Medium dark gray */
+    --bg-tertiary: rgba(75, 75, 75, 0.75); /* Lighter gray */
+    --bg-card: rgba(250, 250, 250, 0.98); /* Near-white for cards */
 
-    --text-primary: #eceff4;
-    --text-secondary: #d8dee9;
-    --text-muted: #a3a9b8;
-    --text-accent: #7fb069;
+    /* High-Contrast Text Colors */
+    --text-primary: #ffffff; /* Pure white */
+    --text-secondary: #f0f0f0; /* Near-white */
+    --text-muted: #c0c0c0; /* Light gray, still highly readable */
+    --text-accent: #22c55e; /* Keep green accent for game elements */
 
-    --border-color: rgba(129, 161, 193, 0.25);
+    /* High-Contrast Borders */
+    --border-color: rgba(200, 200, 200, 0.6); /* Light gray borders with good opacity */
 
     /* Scaled Dimensions */
     --border-radius: 8.04px; /* 12px * 0.67 */
@@ -58,7 +61,7 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #3c4454 0%, #4a6b8a 50%, #6b8ba3 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%); /* High-contrast dark gradient */
     color: var(--text-primary);
     overflow: hidden;
     height: 100vh;
@@ -71,7 +74,7 @@ body {
 
 /* === UTILITY CLASSES === */
 .text-gradient {
-    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); /* High-contrast white gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -95,9 +98,10 @@ body {
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 
-.text-gray-300 { color: #d8dee9; }
-.text-gray-400 { color: #a3a9b8; }
-.text-gray-500 { color: #81a1c1; }
+/* High-Contrast Gray Scale Utilities */
+.text-gray-300 { color: #f0f0f0; } /* Near-white */
+.text-gray-400 { color: #c0c0c0; } /* Light gray, highly readable */
+.text-gray-500 { color: #a0a0a0; } /* Medium gray, still readable */
 
 /* === NOTIFICATION SYSTEM === */
 .notification {
@@ -123,26 +127,30 @@ body {
 }
 
 .notification.success {
-    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); /* Keep green for success */
+    color: #ffffff; /* Ensure white text for contrast */
 }
 
 .notification.error {
-    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* Keep red for errors */
+    color: #ffffff; /* Ensure white text for contrast */
 }
 
 .notification.warning {
-    background: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); /* Keep amber for warnings */
+    color: #ffffff; /* Ensure white text for contrast */
 }
 
 .notification.info {
-    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%); /* High-contrast gray for info */
+    color: #ffffff; /* Ensure white text for contrast */
 }
 
 /* === MODAL STYLES === */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(35, 40, 50, 0.9);
+    background: rgba(0, 0, 0, 0.9); /* High-contrast black overlay */
     backdrop-filter: blur(5.36px); /* 8px * 0.67 */
     display: none;
     align-items: center;
@@ -204,16 +212,16 @@ body {
 
 .setup-input:focus {
     outline: none;
-    border-color: #7fb069;
-    box-shadow: 0 0 0 2.01px rgba(127, 176, 105, 0.2); /* 3px * 0.67 */
+    border-color: #ffffff; /* High-contrast white focus border */
+    box-shadow: 0 0 0 2.01px rgba(255, 255, 255, 0.5); /* High-contrast white focus shadow */
 }
 
 .start-game-btn {
-    background: var(--success-gradient);
+    background: var(--success-gradient); /* Keep green for success actions */
     border: none;
     border-radius: var(--border-radius);
     padding: var(--spacing-lg) var(--spacing-xl);
-    color: white;
+    color: white; /* High-contrast white text */
     font-weight: 700;
     font-size: 0.737rem; /* 1.1rem * 0.67 */
     cursor: pointer;
@@ -248,7 +256,7 @@ body {
 .setup-title {
     font-size: 1.75rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 50%, #d4a5a5 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #e0e0e0 100%); /* High-contrast white gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -265,23 +273,23 @@ body {
     position: absolute;
     top: -0.5rem;
     right: -0.5rem;
-    background: rgba(212, 165, 165, 0.15);
-    border: 1px solid rgba(212, 165, 165, 0.4);
+    background: rgba(100, 100, 100, 0.3); /* High-contrast gray background */
+    border: 1px solid rgba(200, 200, 200, 0.6); /* Light gray border */
     border-radius: 50%;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #d4a5a5;
+    color: #ffffff; /* High-contrast white text */
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 14px;
 }
 
 .setup-close-btn:hover {
-    background: rgba(212, 165, 165, 0.25);
-    border-color: rgba(212, 165, 165, 0.6);
+    background: rgba(150, 150, 150, 0.5); /* Lighter gray on hover */
+    border-color: rgba(255, 255, 255, 0.8); /* White border on hover */
     transform: scale(1.1);
 }
 
@@ -363,8 +371,8 @@ body {
 
 .setup-input-optimized:focus {
     outline: none;
-    border-color: #7fb069;
-    box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.2);
+    border-color: #ffffff; /* High-contrast white focus border */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); /* High-contrast white focus shadow */
     background: var(--bg-primary);
 }
 
@@ -393,14 +401,14 @@ body {
 }
 
 .setup-stepper:hover {
-    background: rgba(127, 176, 105, 0.15);
-    border-color: #7fb069;
-    color: #7fb069;
+    background: rgba(255, 255, 255, 0.2); /* High-contrast white hover background */
+    border-color: #ffffff; /* White border on hover */
+    color: #ffffff; /* White text on hover */
 }
 
 .setup-info {
-    background: rgba(127, 176, 105, 0.08);
-    border: 1px solid rgba(127, 176, 105, 0.25);
+    background: rgba(80, 80, 80, 0.3); /* High-contrast dark gray background */
+    border: 1px solid rgba(200, 200, 200, 0.4); /* Light gray border */
     border-radius: 8px;
     padding: 1rem;
     display: flex;
@@ -424,7 +432,7 @@ body {
 .setup-info-value {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #7fb069;
+    color: #ffffff; /* High-contrast white for values */
 }
 
 .setup-actions {
@@ -450,25 +458,25 @@ body {
 }
 
 .setup-btn-primary {
-    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
+    background: var(--success-gradient); /* Keep green for primary actions */
     color: white;
-    box-shadow: 0 4px 12px rgba(127, 176, 105, 0.3);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4); /* Green shadow */
 }
 
 .setup-btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(127, 176, 105, 0.4);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5); /* Enhanced green shadow */
 }
 
 .setup-btn-secondary {
-    background: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%); /* High-contrast gray for secondary */
     color: white;
-    box-shadow: 0 4px 12px rgba(230, 177, 122, 0.3);
+    box-shadow: 0 4px 12px rgba(107, 114, 128, 0.4); /* Gray shadow */
 }
 
 .setup-btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(230, 177, 122, 0.4);
+    box-shadow: 0 6px 20px rgba(107, 114, 128, 0.5); /* Enhanced gray shadow */
 }
 
 /* === MELD SELECTION MODALS === */
@@ -516,16 +524,16 @@ body {
 }
 
 .meld-option:hover {
-    border-color: #8b9dc3;
-    background: rgba(139, 157, 195, 0.15);
+    border-color: #ffffff; /* High-contrast white border on hover */
+    background: rgba(255, 255, 255, 0.1); /* Subtle white background on hover */
     transform: translateY(-1.34px); /* -2px * 0.67 */
     box-shadow: var(--shadow-md);
 }
 
 .meld-option.selected {
-    border-color: #7fb069;
-    background: rgba(127, 176, 105, 0.2);
-    box-shadow: 0 0 13.4px rgba(127, 176, 105, 0.3); /* 20px * 0.67 */
+    border-color: #22c55e; /* Keep green for selected state */
+    background: rgba(34, 197, 94, 0.2); /* Green background for selected */
+    box-shadow: 0 0 13.4px rgba(34, 197, 94, 0.4); /* Green glow for selected */
 }
 
 .meld-option-header {
@@ -538,7 +546,7 @@ body {
 .meld-type {
     font-weight: 700;
     font-size: 0.737rem; /* 1.1rem * 0.67 */
-    color: #8b9dc3;
+    color: #ffffff; /* High-contrast white for meld type */
 }
 
 .meld-description {
@@ -573,16 +581,16 @@ body {
 }
 
 .meld-card-preview.red {
-    color: #bf616a;
+    color: #dc2626; /* High-contrast red for red suits */
 }
 
 .meld-card-preview.black {
-    color: #3b4252;
+    color: #000000; /* High-contrast black for black suits */
 }
 
 .meld-card-preview.potter {
-    border-color: #ebcb8b;
-    box-shadow: 0 0 10.05px rgba(235, 203, 139, 0.6); /* 15px * 0.67 */
+    border-color: #fbbf24; /* Enhanced golden color for Potter cards */
+    box-shadow: 0 0 10.05px rgba(251, 191, 36, 0.8); /* Enhanced golden glow */
 }
 
 .meld-card-preview .rank {
@@ -1015,31 +1023,31 @@ body {
 
 /* === LOG ENTRY STYLING === */
 .log-penalty {
-    color: #e6b17a;
+    color: #f59e0b; /* Keep amber for penalties */
     font-weight: 600;
-    background: rgba(230, 177, 122, 0.12);
+    background: rgba(245, 158, 11, 0.2); /* Enhanced amber background */
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 2.68px; /* 4px * 0.67 */
-    border-left: 2.68px solid #e6b17a; /* 4px * 0.67 */
+    border-left: 2.68px solid #f59e0b; /* Amber border */
     margin: var(--spacing-xs) 0;
 }
 
 .log-info {
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* High-contrast light gray */
 }
 
 .log-success {
-    color: #7fb069;
+    color: #22c55e; /* Keep green for success */
     font-weight: 500;
 }
 
 .log-error {
-    color: #d4a5a5;
+    color: #ef4444; /* Keep red for errors */
     font-weight: 500;
 }
 
 .log-turn {
-    color: #8b9dc3;
+    color: #ffffff; /* High-contrast white for turn info */
     font-weight: 600;
 }
 
@@ -1050,12 +1058,12 @@ body {
 
     display: grid;
     grid-template-columns: 1fr var(--col-width-right);
-    grid-template-rows: auto 3fr 1fr;
+    grid-template-rows: auto 2.5fr 0.9fr;
     grid-template-areas:
         "header header"
         "melds right-column"
         "hand-and-piles right-column";
-    background: rgba(35, 40, 50, 0.5);
+    background: rgba(10, 10, 10, 0.7); /* High-contrast dark background */
     backdrop-filter: blur(3.35px); /* 5px * 0.67 */
     padding: var(--spacing-sm);
     gap: var(--spacing-sm);
@@ -1085,7 +1093,7 @@ body {
 .game-title {
     font-size: 1.273rem; /* 1.9rem * 0.67 */
     font-weight: 800;
-    background: var(--primary-gradient);
+    background: var(--primary-gradient); /* High-contrast white gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1107,8 +1115,8 @@ body {
 }
 
 .potter-badge {
-    background: linear-gradient(135deg, #ebcb8b 20%, #e6b17a 100%);
-    color: #2e3440;
+    background: linear-gradient(135deg, #fbbf24 20%, #f59e0b 100%); /* Keep golden colors for Potter elements */
+    color: #000000; /* High-contrast black text on golden background */
     font-weight: 600;
 }
 
@@ -1156,7 +1164,8 @@ body {
     border-radius: var(--border-radius);
     font-size: 0.5695rem; /* 0.85rem * 0.67 */
     font-weight: 600;
-    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
+    background: var(--success-gradient); /* Keep green for active turn indicator */
+    color: #ffffff; /* Ensure white text for contrast */
 }
 
 .header-right {
@@ -1209,9 +1218,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
-    flex: 0 0 auto; /* Fixed size - don't grow or shrink */
+    flex: 0 0 auto; /* Fixed size to accommodate exactly 3 players */
     overflow: visible; /* Allow section title to be visible */
-    height: auto; /* Let content determine height initially */
+    /* Dynamic height will be set by JavaScript based on actual DOM measurements */
+    min-height: 120px; /* Fallback minimum height */
+    transition: height 0.2s ease; /* Smooth height transitions */
 }
 
 /* === RIGHT COLUMN BOTTOM: Opponents Section === */
@@ -1224,8 +1235,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
-    flex: 1; /* Take all remaining space after fixed scoreboard */
-    min-height: 0; /* Allow proper flex shrinking */
+    flex: 1 1 auto; /* Allow growing and shrinking for better balance */
+    min-height: 120px; /* Minimum height to ensure visibility */
     overflow: hidden; /* Prevent section from overflowing */
 }
 
@@ -1265,14 +1276,14 @@ body {
 }
 
 .player-area.active {
-    border-color: #8b9dc3;
-    box-shadow: 0 0 13.4px rgba(139, 157, 195, 0.4); /* 20px * 0.67 */
-    background: rgba(139, 157, 195, 0.15);
+    border-color: #ffffff; /* High-contrast white border for active player */
+    box-shadow: 0 0 13.4px rgba(255, 255, 255, 0.6); /* White glow for active player */
+    background: rgba(255, 255, 255, 0.1); /* Subtle white background */
 }
 
 .player-area.human {
-    border-color: #7fb069;
-    background: rgba(127, 176, 105, 0.15);
+    border-color: #22c55e; /* Keep green for human player identification */
+    background: rgba(34, 197, 94, 0.15); /* Green background for human player */
 }
 
 
@@ -1315,7 +1326,7 @@ body {
 /* Ensure discard pile container takes full width of its parent */
 .discard-pile-container {
     width: 100%; /* Take full width available in the pile group */
-    align-items: stretch; /* Stretch child elements to full width */
+    align-items: center; /* Center child elements instead of stretching */
 }
 
 .pile-separator {
@@ -1336,7 +1347,7 @@ body {
 }
 
 .separator-text {
-    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2c8 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); /* High-contrast white gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1347,15 +1358,15 @@ body {
 .discard-pile {
     min-width: 60.3px; /* 90px * 0.67 */
     min-height: 87.1px; /* 130px * 0.67 */
-    width: 100%; /* Take full available width in parent */
+    width: auto; /* Size based on content, not full width */
     border: 1.34px dashed var(--border-color); /* 2px * 0.67 */
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align content to left */
+    justify-content: center; /* Center content horizontally */
     position: relative;
     background: var(--bg-tertiary);
-    padding-left: 0; /* Remove left padding */
+    padding: 0; /* Remove all padding for proper centering */
     overflow: visible; /* Allow cards to extend beyond bounds if needed */
 }
 
@@ -1403,7 +1414,7 @@ body {
     flex: 1;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
     gap: var(--spacing-md);
     align-content: start; /* Align grid content to top */
 }
@@ -1443,10 +1454,11 @@ body {
     flex-direction: column;
     gap: var(--spacing-xs);
     flex: 1;
-    /* Fixed height to show exactly 3 players with scrolling for more */
-    max-height: 205px; /* Approximately 3 player entries + padding */
+    /* Dynamic height will be set by JavaScript to show exactly 3 players */
+    min-height: 80px; /* Fallback minimum height */
     overflow-y: auto;
     overflow-x: hidden;
+    transition: height 0.2s ease, max-height 0.2s ease; /* Smooth height transitions */
 }
 
 .scoreboard > div {
@@ -1461,22 +1473,50 @@ body {
     min-height: 50px; /* Consistent height for each player entry */
 }
 
+/* Visual emphasis for top 3 players */
+.scoreboard > div:nth-child(1),
+.scoreboard > div:nth-child(2),
+.scoreboard > div:nth-child(3) {
+    position: relative;
+}
+
+/* Subtle top 3 indicator */
+.scoreboard > div:nth-child(1)::before,
+.scoreboard > div:nth-child(2)::before,
+.scoreboard > div:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #fbbf24, #f59e0b, #d97706);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    opacity: 0.6;
+}
+
+/* Separator line after 3rd place (when 4+ players exist) */
+.scoreboard > div:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+}
+
 .scoreboard > div:hover {
     background: var(--bg-tertiary); /* Default hover for all players */
     transform: translateY(-0.67px); /* -1px * 0.67 */
 }
 
-/* 1st place winner styling - transparent golden gradient */
+/* 1st place winner styling - high-contrast golden gradient */
 .scoreboard > div.first-place {
-    background: linear-gradient(135deg, rgba(254, 243, 199, 0.25) 0%, rgba(253, 230, 138, 0.35) 100%); /* Semi-transparent golden gradient */
-    border: 0.67px solid rgba(212, 165, 116, 0.6); /* Semi-transparent golden border */
-    box-shadow: 0 1px 3px rgba(212, 165, 116, 0.15); /* Subtle transparent golden shadow */
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.3) 0%, rgba(245, 158, 11, 0.4) 100%); /* Enhanced golden gradient */
+    border: 0.67px solid rgba(251, 191, 36, 0.8); /* Stronger golden border */
+    box-shadow: 0 1px 3px rgba(251, 191, 36, 0.3); /* Enhanced golden shadow */
     backdrop-filter: blur(1px); /* Subtle blur effect for elegance */
 }
 
 .scoreboard > div.first-place:hover {
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.4) 0%, rgba(245, 158, 11, 0.5) 100%); /* Richer transparent golden hover */
-    box-shadow: 0 2px 6px rgba(212, 165, 116, 0.25); /* Enhanced transparent golden shadow on hover */
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.5) 0%, rgba(245, 158, 11, 0.6) 100%); /* Stronger golden hover */
+    box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4); /* Enhanced golden shadow on hover */
     backdrop-filter: blur(2px); /* Slightly more blur on hover */
 }
 
@@ -1485,9 +1525,9 @@ body {
     display: inline-block;
     margin-right: 4px; /* Small gap between cup and player name */
     font-size: 0.7rem; /* Slightly larger than text for prominence */
-    color: #f59e0b; /* Lighter golden color for better visibility */
+    color: #fbbf24; /* Enhanced golden color for better visibility */
     vertical-align: middle;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for contrast */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); /* Stronger shadow for high contrast */
 }
 
 /* Player name styling in scoreboard - default colors */
@@ -1498,10 +1538,10 @@ body {
     vertical-align: middle;
 }
 
-/* Player name styling for 1st place winner - lighter golden colors */
+/* Player name styling for 1st place winner - enhanced golden colors */
 .scoreboard > div.first-place .scoreboard-player-name {
-    color: #f59e0b; /* Lighter golden amber for better readability */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle shadow for contrast */
+    color: #fbbf24; /* Enhanced golden color for better readability */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Stronger shadow for high contrast */
 }
 
 /* Score styling in scoreboard - default colors */
@@ -1511,10 +1551,10 @@ body {
     font-size: 1.1em; /* Slightly larger for emphasis */
 }
 
-/* Score styling for 1st place winner - lighter golden colors */
+/* Score styling for 1st place winner - enhanced golden colors */
 .scoreboard > div.first-place .scoreboard-player-score {
-    color: #f59e0b; /* Lighter golden amber for better readability */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle shadow for contrast */
+    color: #fbbf24; /* Enhanced golden color for better readability */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Stronger shadow for high contrast */
 }
 
 /* Status text styling in scoreboard - default colors */
@@ -1524,11 +1564,11 @@ body {
     font-size: 0.85em;
 }
 
-/* Status text styling for 1st place winner - lighter golden colors */
+/* Status text styling for 1st place winner - enhanced golden colors */
 .scoreboard > div.first-place .scoreboard-player-status {
-    color: #fbbf24; /* Lighter golden yellow for status text readability */
-    opacity: 0.95; /* Slightly higher opacity for better visibility */
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Very subtle shadow for contrast */
+    color: #fbbf24; /* Enhanced golden color for status text readability */
+    opacity: 1.0; /* Full opacity for maximum visibility */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Stronger shadow for high contrast */
 }
 
 /* Hide scrollbar for scoreboard while keeping scroll functionality */
@@ -1597,27 +1637,150 @@ body {
     -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
-/* Visual indicator for scrollable scoreboard */
+/* Enhanced visual indicator for scrollable scoreboard - shows when 4+ players exist */
 .scoreboard-section::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(to top, var(--bg-primary), transparent);
+    bottom: var(--spacing-md);
+    left: var(--spacing-md);
+    right: var(--spacing-md);
+    height: 12px;
+    background: linear-gradient(to top, var(--bg-primary) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 }
 
+/* Show scroll indicator when there are more than 3 players */
 .scoreboard-section.has-scroll::after {
     opacity: 1;
+}
+
+/* Additional scroll hint with subtle animation */
+.scoreboard-section.has-scroll::before {
+    content: '⋯';
+    position: absolute;
+    bottom: calc(var(--spacing-md) + 2px);
+    right: calc(var(--spacing-md) + 8px);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.7;
+    animation: pulse-scroll 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-scroll {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.3; }
 }
 
 /* Add relative positioning to scoreboard section for the pseudo-element */
 .scoreboard-section {
     position: relative;
+}
+
+/* === SCOREBOARD DYNAMIC HEIGHT SYSTEM === */
+/*
+ * The scoreboard uses dynamic height calculations based on actual DOM measurements:
+ *
+ * DISPLAY RULES:
+ * - Shows exactly 3 players in the visible area (1st, 2nd, 3rd place)
+ * - Players ranked 4th and below are accessible via scrolling
+ * - JavaScript sorts players by score (ascending) before rendering
+ *
+ * DYNAMIC HEIGHT CALCULATION:
+ * - JavaScript measures actual rendered player entry heights
+ * - Accounts for computed CSS variables (spacing, padding, margins)
+ * - Recalculates on viewport resize and content changes
+ * - Handles responsive breakpoints automatically
+ *
+ * VISUAL HIERARCHY:
+ * - Top 3 players have subtle left border indicators
+ * - 1st place retains existing golden styling
+ * - Separator line after 3rd place when 4+ players exist
+ * - Scroll indicators show when additional players are available
+ *
+ * FALLBACK SYSTEM:
+ * - CSS provides minimum heights as fallbacks
+ * - Graceful degradation if JavaScript measurement fails
+ */
+
+/* Dynamic height calculation states */
+.scoreboard-section.calculating-height {
+    /* Applied during height calculation to prevent layout shifts */
+    overflow: hidden;
+}
+
+.scoreboard-section.height-calculated {
+    /* Applied after successful height calculation */
+    overflow: visible;
+}
+
+/* Measurement helper classes (temporarily applied during calculation) */
+.scoreboard-measure-helper {
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
+    top: -9999px;
+    left: -9999px;
+    z-index: -1;
+}
+
+/* Enhanced transition effects for dynamic height changes */
+.scoreboard-section.calculating-height .scoreboard {
+    /* Prevent content jumping during calculation */
+    overflow: hidden;
+}
+
+.scoreboard-section.height-calculated .scoreboard {
+    /* Restore normal overflow after calculation */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Smooth height transitions with different timing for different screen sizes */
+@media (min-width: 1201px) {
+    .scoreboard-section, .scoreboard {
+        transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                   max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                   min-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+@media (max-width: 1200px) {
+    .scoreboard-section, .scoreboard {
+        transition: height 0.2s ease-out,
+                   max-height 0.2s ease-out,
+                   min-height 0.2s ease-out;
+    }
+}
+
+@media (max-width: 768px) {
+    .scoreboard-section, .scoreboard {
+        transition: height 0.15s ease-out,
+                   max-height 0.15s ease-out,
+                   min-height 0.15s ease-out;
+    }
+}
+
+/* Prevent layout shifts during height calculation */
+.scoreboard-section.calculating-height {
+    will-change: height;
+}
+
+.scoreboard.calculating-height {
+    will-change: height, max-height;
+}
+
+/* Reset will-change after calculation */
+.scoreboard-section.height-calculated {
+    will-change: auto;
+}
+
+.scoreboard.height-calculated {
+    will-change: auto;
 }
 
 /* === BOTTOM SECTION: Asymmetric Hand and Piles Columns (30/70 split) === */
@@ -1639,7 +1802,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
-    flex: 0.27; /* Smaller flex value for ~30-35% width */
+    flex: 0.2; /* Smaller flex value for ~30-35% width */
     min-width: 200px; /* Ensure minimum width for proper pile display */
 }
 
@@ -1693,7 +1856,7 @@ body {
 
 .player-status.status-normal,
 .status-indicator.status-normal {
-    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%) !important;
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%) !important; /* High-contrast gray for normal status */
     color: white !important;
     padding: var(--spacing-xs) var(--spacing-md) !important;
     border-radius: 13.4px !important; /* 20px * 0.67 */
@@ -1703,14 +1866,14 @@ body {
     letter-spacing: 0.335px !important; /* 0.5px * 0.67 */
     display: inline-block !important;
     border: none !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important; /* Stronger shadow for contrast */
 }
 
 /* Consistent Sallan status styling for all players - unified definition */
 .sallan-status,
 .player-status.status-sallan,
 .status-indicator.status-sallan {
-    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%) !important;
+    background: var(--success-gradient) !important; /* Keep green for Sallan status */
     color: white !important;
     padding: var(--spacing-xs) var(--spacing-md) !important;
     border-radius: 13.4px !important; /* 20px * 0.67 */
@@ -1720,7 +1883,7 @@ body {
     letter-spacing: 0.335px !important; /* 0.5px * 0.67 */
     display: inline-block !important;
     border: none !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important; /* Stronger shadow for contrast */
 }
 
 /* Opponent player area header layout */
@@ -1893,9 +2056,10 @@ body {
 }
 
 .control-btn:disabled {
-    opacity: 0.5;
+    opacity: 0.7; /* Improved contrast for disabled state */
     cursor: not-allowed;
     transform: none !important;
+    background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%) !important; /* High-contrast gray for disabled */
 }
 
 .control-btn:disabled::before {
@@ -1908,27 +2072,27 @@ body {
 }
 
 .control-btn.primary {
-    background: linear-gradient(135deg, #8b9dc3 0%, #a8b5d1 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%); /* High-contrast gray for primary */
     color: white;
 }
 
 .control-btn.success {
-    background: linear-gradient(135deg, #7fb069 0%, #88c999 100%);
+    background: var(--success-gradient); /* Keep green for success actions */
     color: white;
 }
 
 .control-btn.warning {
-    background: linear-gradient(135deg, #e6b17a 0%, #d4a574 100%);
+    background: var(--warning-gradient); /* Keep amber for warning actions */
     color: white;
 }
 
 .control-btn.danger {
-    background: linear-gradient(135deg, #d4a5a5 0%, #c8a2a2 100%);
+    background: var(--danger-gradient); /* Keep red for danger actions */
     color: white;
 }
 
 .control-btn.end-turn {
-    background: linear-gradient(135deg, #81a1c1 0%, #8b9dc3 100%);
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%); /* High-contrast dark gray for end turn */
     color: white;
     /* Make End Turn button more prominent while maintaining consistent width */
     flex: 0 0 auto; /* Override flex to maintain consistent width */
@@ -2127,24 +2291,24 @@ body {
 
 /* Potter cards in hand - maintain animation on hover */
 .card.potter:hover {
-    border-color: #ebcb8b !important;
-    box-shadow: 0 0 20px rgba(235, 203, 139, 0.8), var(--shadow-md) !important;
+    border-color: #fbbf24 !important; /* Enhanced golden color */
+    box-shadow: 0 0 20px rgba(251, 191, 36, 1.0), var(--shadow-md) !important; /* Enhanced golden glow */
     animation: potter-glow 2s ease-in-out infinite !important;
 }
 
 .card.selected {
     transform: translateY(-10.05px); /* -15px * 0.67 */
-    border-color: #8b9dc3;
-    box-shadow: 0 10.05px 23.45px rgba(139, 157, 195, 0.4), 0 0 13.4px rgba(139, 157, 195, 0.6); /* (0 15px 35px), (0 0 20px) * 0.67 */
+    border-color: #ffffff; /* High-contrast white border for selected cards */
+    box-shadow: 0 10.05px 23.45px rgba(255, 255, 255, 0.4), 0 0 13.4px rgba(255, 255, 255, 0.6); /* White glow for selected cards */
     z-index: 10;
 }
 
 .card.red {
-    color: #bf616a;
+    color: #dc2626; /* Keep red for card suits, but use high-contrast red */
 }
 
 .card.black {
-    color: #3b4252;
+    color: #000000; /* High-contrast black for black suits */
 }
 
 .card .rank {
@@ -2159,8 +2323,8 @@ body {
 }
 
 .card.back {
-    background: linear-gradient(135deg, #5e81ac 0%, #8b9dc3 100%);
-    border-color: #a8b5d1;
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%); /* High-contrast dark gray for card backs */
+    border-color: #6b7280; /* Medium gray border */
     color: white;
     display: flex;
     align-items: center;
@@ -2175,17 +2339,17 @@ body {
 }
 
 .card.potter {
-    border-color: #ebcb8b !important;
-    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important; /* 20px * 0.67 */
+    border-color: #fbbf24 !important; /* Keep golden color for Potter cards */
+    box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.8) !important; /* Enhanced golden glow */
     animation: potter-glow 2s ease-in-out infinite !important;
 }
 
 @keyframes potter-glow {
     0%, 100% {
-        box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important; /* 20px * 0.67 */
+        box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.8) !important; /* Enhanced golden glow */
     }
     50% {
-        box-shadow: 0 0 23.45px rgba(235, 203, 139, 0.8) !important; /* 35px * 0.67 */
+        box-shadow: 0 0 23.45px rgba(251, 191, 36, 1.0) !important; /* Stronger golden glow */
     }
 }
 
@@ -2221,7 +2385,7 @@ body {
 .table-melds > div {
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     border: 0.67px solid var(--border-color); /* 1px * 0.67 */
     transition: var(--transition-fast);
     cursor: pointer;
@@ -2261,13 +2425,13 @@ body {
 
 .table-melds > div:hover {
     background: var(--bg-tertiary);
-    border-color: rgba(139, 157, 195, 0.5);
+    border-color: rgba(255, 255, 255, 0.4); /* High-contrast white border on hover */
 }
 
 .table-melds > div.selected {
-    border-color: #ebcb8b;
-    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.4); /* 20px * 0.67 */
-    background: rgba(235, 203, 139, 0.12);
+    border-color: #fbbf24; /* Enhanced golden color for selected melds */
+    box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.6); /* Enhanced golden glow */
+    background: rgba(251, 191, 36, 0.15); /* Golden background for selected */
 }
 
 /* Specific styling for cards within table melds only */
@@ -2278,20 +2442,20 @@ body {
     position: relative;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 5.36px 2.68px 2.68px 5.36px;
+    padding: var(--spacing-sm);
     background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
     border: 1.34px solid #2c343e80;
     transition: all 0.2s ease-in-out;
-    width: 45px; /* Compact width for horizontal layout */
-    height: 65px; /* Proportional height */
-    font-size: 7px; /* Readable font size */
+    width: 55px; /* Increased width by ~22% (45px -> 55px) */
+    height: 80px; /* Increased height by ~23% (65px -> 80px) */
+    font-size: 9px; /* Increased font size by ~29% (7px -> 9px) */
     flex-shrink: 0; /* Prevent cards from shrinking */
 }
 
 /* Potter cards in table melds - ensure animation works */
 .table-melds .card.potter {
-    border-color: #ebcb8b !important;
-    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important;
+    border-color: #fbbf24 !important; /* Enhanced golden color */
+    box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.8) !important; /* Enhanced golden glow */
     animation: potter-glow 2s ease-in-out infinite !important;
 }
 
@@ -2308,8 +2472,8 @@ body {
 
 /* Potter cards in table melds - maintain animation on hover */
 .table-melds .card.potter:hover {
-    border-color: #ebcb8b !important; /* Keep Potter border color on hover */
-    box-shadow: 0 0 20px rgba(235, 203, 139, 0.8), 4px 8px 16px rgba(0, 0, 0, 0.4) !important; /* Combine Potter glow with hover shadow */
+    border-color: #fbbf24 !important; /* Enhanced golden border color on hover */
+    box-shadow: 0 0 20px rgba(251, 191, 36, 1.0), 4px 8px 16px rgba(0, 0, 0, 0.4) !important; /* Enhanced Potter glow with hover shadow */
     animation: potter-glow 2s ease-in-out infinite !important; /* Maintain animation on hover */
 }
 
@@ -2369,14 +2533,14 @@ body {
 
 /* Potter cards in discard pile - maintain animation */
 .discard-pile-card.potter {
-    border-color: #ebcb8b !important;
-    box-shadow: 0 0 13.4px rgba(235, 203, 139, 0.6) !important;
+    border-color: #fbbf24 !important; /* Enhanced golden color */
+    box-shadow: 0 0 13.4px rgba(251, 191, 36, 0.8) !important; /* Enhanced golden glow */
     animation: potter-glow 2s ease-in-out infinite !important;
 }
 
 .discard-pile-card.potter:hover {
-    border-color: #ebcb8b !important;
-    box-shadow: 0 0 20px rgba(235, 203, 139, 0.8), 4px 8px 16px rgba(0, 0, 0, 0.4) !important;
+    border-color: #fbbf24 !important; /* Enhanced golden color */
+    box-shadow: 0 0 20px rgba(251, 191, 36, 1.0), 4px 8px 16px rgba(0, 0, 0, 0.4) !important; /* Enhanced golden glow */
     animation: potter-glow 2s ease-in-out infinite !important;
 }
 
@@ -2403,6 +2567,17 @@ body {
 @media (max-width: 1400px) {
     .game-container {
         grid-template-columns: 1fr 160px; /* Updated for new 2-column layout */
+    }
+
+    /* Responsive scoreboard adjustments for medium screens - dynamic height will be recalculated */
+    .scoreboard-section {
+        /* Dynamic height will be recalculated by JavaScript for this breakpoint */
+        min-height: 110px; /* Adjusted fallback minimum */
+    }
+
+    .scoreboard {
+        /* Dynamic height will be recalculated by JavaScript */
+        min-height: 70px; /* Adjusted fallback minimum */
     }
 
     .player-area {
@@ -2440,9 +2615,9 @@ body {
     /* Responsive table meld card overlapping for 1400px breakpoint */
     .table-melds .card {
         margin-left: -18px; /* Adjusted overlap for smaller screens in two-column layout */
-        width: 45px; /* Smaller cards for smaller screens */
-        height: 65px;
-        font-size: 7px;
+        width: 55px; /* Increased cards for better readability (45px -> 55px) */
+        height: 80px; /* Increased height proportionally (65px -> 80px) */
+        font-size: 9px; /* Increased font size for better readability (7px -> 9px) */
     }
 
     /* Adjust two-column layout for smaller screens */
@@ -2472,6 +2647,17 @@ body {
             "hand-and-piles";
         overflow-y: auto;
         height: auto;
+    }
+
+    /* Responsive scoreboard adjustments for tablet screens - dynamic height will be recalculated */
+    .scoreboard-section {
+        /* Dynamic height will be recalculated by JavaScript for tablet */
+        min-height: 100px; /* Adjusted fallback minimum */
+    }
+
+    .scoreboard {
+        /* Dynamic height will be recalculated by JavaScript */
+        min-height: 60px; /* Adjusted fallback minimum */
     }
 
     /* Stack piles and hand vertically on mobile */
@@ -2511,18 +2697,18 @@ body {
         margin-left: -15px; /* Increased overlap */
     }
 
-    /* Switch to single column on medium screens */
+    /* Maintain two-column layout on medium screens */
     .table-melds {
-        grid-template-columns: 1fr; /* Single column for medium screens */
+        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
         gap: var(--spacing-md);
     }
 
     /* Responsive table meld card overlapping for 1200px breakpoint */
     .table-melds .card {
-        margin-left: -18px; /* Overlap for single column */
-        width: 50px; /* Larger cards in single column */
-        height: 72px;
-        font-size: 8px;
+        margin-left: -18px; /* Overlap for two-column layout */
+        width: 62px; /* Increased cards for better readability (50px -> 62px) */
+        height: 90px; /* Increased height proportionally (72px -> 90px) */
+        font-size: 10px; /* Increased font size for better readability (8px -> 10px) */
     }
 
     /* Responsive discard pile card overlapping for 1200px breakpoint */
@@ -2530,16 +2716,21 @@ body {
         margin-left: -35px !important; /* Much tighter overlap for medium screens */
     }
 
-    /* Adjust meld layout for single column - horizontal layout */
+    /* Ensure discard pile remains centered on medium screens */
+    .discard-pile {
+        justify-content: center !important;
+    }
+
+    /* Adjust meld layout for two-column - horizontal layout */
     .table-melds > div {
-        flex-direction: row; /* Horizontal layout in single column */
+        flex-direction: row; /* Horizontal layout in two-column */
         align-items: center;
-        gap: var(--spacing-md); /* More space in single column */
-        min-height: 75px; /* Comfortable height for single column */
+        gap: var(--spacing-md); /* More space in two-column layout */
+        min-height: 75px; /* Comfortable height for two-column layout */
     }
 
     .meld-text-group {
-        align-items: flex-start; /* Left align text in single column */
+        align-items: flex-start; /* Left align text in two-column layout */
         text-align: left;
         width: auto;
         min-width: 90px;
@@ -2547,7 +2738,7 @@ body {
     }
 
     .meld-cards-group {
-        justify-content: flex-start; /* Left align cards in single column */
+        justify-content: flex-start; /* Left align cards in two-column layout */
         padding-left: var(--spacing-md);
     }
 
@@ -2588,6 +2779,22 @@ body {
         gap: var(--spacing-md);
         min-height: auto;
         padding: var(--spacing-md);
+    }
+
+    /* Responsive scoreboard adjustments for mobile screens - dynamic height will be recalculated */
+    .scoreboard-section {
+        /* Dynamic height will be recalculated by JavaScript for mobile */
+        min-height: 90px; /* Adjusted fallback minimum for mobile */
+    }
+
+    .scoreboard {
+        /* Dynamic height will be recalculated by JavaScript */
+        min-height: 50px; /* Adjusted fallback minimum for mobile */
+    }
+
+    .scoreboard > div {
+        min-height: 45px; /* Slightly smaller player entries on mobile */
+        padding: calc(var(--spacing-xs) * 0.8); /* Reduced padding */
     }
 
     .header-left,
@@ -2655,14 +2862,19 @@ body {
     /* Responsive table meld card overlapping for 768px breakpoint */
     .table-melds .card {
         margin-left: -12px; /* Tighter overlap for small screens */
-        width: 40px; /* Smaller cards for mobile */
-        height: 58px;
-        font-size: 6px;
+        width: 45px; /* Increased cards for mobile (40px -> 45px) */
+        height: 65px; /* Increased height proportionally (58px -> 65px) */
+        font-size: 7px; /* Increased font size (6px -> 7px) */
     }
 
     /* Responsive discard pile card overlapping for 768px breakpoint */
     .discard-pile-card:not(:first-child) {
         margin-left: -32px !important; /* Much tighter overlap for small screens */
+    }
+
+    /* Ensure discard pile remains centered on small screens */
+    .discard-pile {
+        justify-content: center !important;
     }
 
     /* Minimal gap between text and cards on small screens */
@@ -2704,6 +2916,23 @@ body {
 }
 
 @media (max-width: 480px) {
+    /* Responsive scoreboard adjustments for very small screens - dynamic height will be recalculated */
+    .scoreboard-section {
+        /* Dynamic height will be recalculated by JavaScript for very small screens */
+        min-height: 80px; /* Adjusted fallback minimum for very small screens */
+    }
+
+    .scoreboard {
+        /* Dynamic height will be recalculated by JavaScript */
+        min-height: 40px; /* Adjusted fallback minimum for very small screens */
+    }
+
+    .scoreboard > div {
+        min-height: 40px; /* Compact player entries */
+        padding: calc(var(--spacing-xs) * 0.6); /* Further reduced padding */
+        font-size: 0.85em; /* Slightly smaller text */
+    }
+
     .control-btn {
         width: 100px; /* Smaller width for very small screens */
         max-width: 100px; /* Consistent max-width */
@@ -2804,13 +3033,13 @@ body {
 .select-meld-btn:focus,
 .cancel-meld-btn:focus,
 .log-toggle-button:focus {
-    outline: 1.34px solid #8b9dc3; /* 2px * 0.67 */
-    outline-offset: 1.34px; /* 2px * 0.67 */
+    outline: 2px solid #ffffff; /* High-contrast white focus outline */
+    outline-offset: 2px; /* Increased for better visibility */
 }
 
 .meld-option:focus {
-    outline: 1.34px solid #8b9dc3; /* 2px * 0.67 */
-    outline-offset: 1.34px; /* 2px * 0.67 */
+    outline: 2px solid #ffffff; /* High-contrast white focus outline */
+    outline-offset: 2px; /* Increased for better visibility */
 }
 
 /* === PRINT STYLES === */
@@ -2874,14 +3103,14 @@ body {
     position: absolute;
     top: 1px;
     left: 1px; /* Changed from right to left for left alignment */
-    background: linear-gradient(45deg, #ebcb8b, #e6b17a);
-    color: #2e3440;
+    background: linear-gradient(45deg, #fbbf24, #f59e0b); /* Enhanced golden gradient */
+    color: #000000; /* High-contrast black text */
     border-radius: 2px;
     padding: 0 2px;
     font-size: 6px;
     font-weight: bold;
-    border: 0.5px solid #d4a574;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    border: 0.5px solid #d97706; /* Darker golden border */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3); /* Stronger shadow */
     z-index: 10;
     line-height: 1;
 }
@@ -3004,4 +3233,4 @@ body {
     color: var(--text-primary);
 }
 
-/*# sourceMappingURL=main.f8dd55d41b38d8e570b1.css.map*/
+/*# sourceMappingURL=main.15ee1baada5cb0fd388d.css.map*/
