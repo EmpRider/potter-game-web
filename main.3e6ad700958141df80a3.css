@@ -1021,6 +1021,108 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+/* === POTTER RUN PLACEMENT MODAL === */
+#potter-run-placement-modal .modal-content {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-xl);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-xl);
+    color: var(--text-primary);
+    backdrop-filter: blur(6.7px);
+}
+
+#potter-run-placement-modal .modal-header h3 {
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#potter-run-placement-modal .modal-header p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.placement-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.placement-option:hover {
+    background: var(--bg-tertiary);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.placement-option-card {
+    flex-shrink: 0;
+    width: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.placement-option-card.red {
+    color: #dc2626;
+}
+
+.placement-option-card.black {
+    color: #000000;
+}
+
+.placement-option-text {
+    flex: 1;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.placement-option-preview {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.placement-result-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+#cancel-potter-placement {
+    background: var(--danger-gradient);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+#cancel-potter-placement:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 /* === LOG ENTRY STYLING === */
 .log-penalty {
     color: #f59e0b; /* Keep amber for penalties */
@@ -3233,4 +3335,4 @@ body {
     color: var(--text-primary);
 }
 
-/*# sourceMappingURL=main.15ee1baada5cb0fd388d.css.map*/
+/*# sourceMappingURL=main.3e6ad700958141df80a3.css.map*/
