@@ -21,6 +21,10 @@
     --text-muted: #c0c0c0; /* Light gray, still highly readable */
     --text-accent: #10b981; /* Enhanced green accent with better contrast */
 
+    /* Accent Colors */
+    --accent-color: #10b981; /* Primary accent color - green */
+    --accent-hover: #059669; /* Darker green for hover states */
+
     /* High-Contrast Borders */
     --border-color: rgba(200, 200, 200, 0.6); /* Light gray borders with good opacity */
 
@@ -1257,6 +1261,211 @@ body {
 .cancel-meld-btn:hover {
     transform: translateY(-1.34px); /* -2px * 0.67 */
     box-shadow: var(--shadow-lg);
+}
+
+/* === ROUND END MODAL === */
+.round-end-modal-content {
+    background: var(--bg-primary);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-xl);
+    max-width: 500px;
+    width: 90vw;
+    border: 1.34px solid var(--border-color);
+    box-shadow: 0 13.4px 26.8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.round-end-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1.34px solid var(--border-color);
+    padding-bottom: var(--spacing-lg);
+}
+
+.round-end-content {
+    margin-bottom: var(--spacing-xl);
+}
+
+.round-winner-section {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent-color);
+}
+
+.winner-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.winner-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.winner-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.round-scores-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.scores-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.scores-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.score-player-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.score-player-points {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.round-end-actions {
+    display: flex !important;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    visibility: visible !important;
+}
+
+.countdown-section {
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.countdown-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-size: 1rem;
+}
+
+.countdown-label {
+    color: var(--text-secondary);
+}
+
+.countdown-timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    min-width: 2rem;
+    text-align: center;
+}
+
+.countdown-unit {
+    color: var(--text-secondary);
+}
+
+.action-buttons {
+    display: flex !important;
+    gap: var(--spacing-md);
+    justify-content: center;
+    visibility: visible !important;
+}
+
+.action-btn {
+    flex: 1;
+    max-width: 200px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.action-btn.primary-btn {
+    background: var(--accent-color, #10b981) !important;
+    color: var(--bg-primary, #ffffff) !important;
+    border-color: var(--accent-color, #10b981) !important;
+    display: flex !important;
+    visibility: visible !important;
+    min-height: 40px !important;
+    min-width: 150px !important;
+}
+
+.action-btn.primary-btn:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.action-btn.secondary-btn {
+    background: var(--bg-secondary, #2d2d2d) !important;
+    color: var(--text-primary, #ffffff) !important;
+    border-color: var(--border-color, #c0c0c0) !important;
+    display: flex !important;
+    visibility: visible !important;
+    min-height: 40px !important;
+    min-width: 150px !important;
+}
+
+.action-btn.secondary-btn:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--text-secondary);
+    transform: translateY(-1px);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+/* DEBUG: Temporary high-visibility styles for round end modal buttons */
+#start-next-round-btn {
+    background: #10b981 !important;
+    color: white !important;
+    border: 2px solid #10b981 !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+}
+
+#end-game-btn {
+    background: #2d2d2d !important;
+    color: white !important;
+    border: 2px solid #c0c0c0 !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
 }
 
 /* === SCORE SUMMARY MODAL === */
