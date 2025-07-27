@@ -87,6 +87,43 @@ body {
     background-clip: text;
 }
 
+/* Ensure emojis within text-gradient elements are visible */
+.text-gradient .modal-icon,
+.text-gradient .round-icon,
+.text-gradient [role="img"] {
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+}
+
+/* Global emoji visibility fix - ensure emojis are always visible */
+.modal-icon,
+.round-icon,
+[role="img"],
+::before,
+::after {
+    /* Prevent emojis from being affected by parent transparency */
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    -webkit-background-clip: initial !important;
+}
+
+/* Specific fixes for pseudo-elements with emojis */
+.log-entry.warning::before,
+.log-entry.success::before,
+.log-entry.error::before,
+.log-entry.round::before,
+.log-entry.potter::before,
+.log-entry.draw::before,
+.log-entry.discard::before,
+.log-entry.meld::before,
+.log-entry.extend::before,
+.log-entry.action::before {
+    opacity: 1 !important;
+    -webkit-text-fill-color: initial !important;
+}
+
 /* Additional Tailwind-like utilities */
 .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
 .text-2xl { font-size: 1.5rem; line-height: 2rem; }
@@ -1280,6 +1317,20 @@ body {
     margin-bottom: var(--spacing-xl);
     border-bottom: 1.34px solid var(--border-color);
     padding-bottom: var(--spacing-lg);
+}
+
+.round-icon,
+.modal-icon {
+    display: inline-block;
+    margin-right: var(--spacing-sm);
+    font-size: 1.875rem;
+    line-height: 1;
+    color: var(--text-primary);
+    /* Ensure emoji is not affected by text gradient */
+    -webkit-text-fill-color: initial !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
 }
 
 .round-end-content {
